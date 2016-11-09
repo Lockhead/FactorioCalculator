@@ -1,3 +1,51 @@
-<h2>About</h2>
+<div class="container">
+<section class="well">
+    <h2>Github Repository</h2>
+    <p>The project can be found in <a href="https://github.com/Kakyo/FactorioCalculator">this repository</a>, please report bug/issues and request features over there</p>
+</section>
 
-<p>This component has no viewmodel. It's just an HTML template.</p>
+<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Warning:</span>
+  Be aware that i'm a factorio player, sooooooooo... 2050?
+</div>
+
+<section>
+    <h2>Known issues</h2>
+    <ul>
+        <li>Currently, whenever an item can be produced by more then one recipe, the first one is always selected. Manually addition is required - no way to add as child.</li>
+        <li>Recipes with too many inputs/outputs will slightly break layout. (damn you satellite recipe!)</li>
+        <li>"Add children" (little tree) button can lead to infinite loop with any recipe that has oil products as requirement.<br/>E.g.: Empty oil barrel can be created by Full Oil Barrel that can be created by Empty Oil Barrel that can be created by Full Oil
+            Barrel........ </li>
+    </ul>
+</section>
+
+<section>
+    <h2>Feature Wishlist</h2>
+    <ul>
+        <li>
+            <h4>Custom recipe support</h4>
+            <p>This system will include all mods out there, the goal here is to allow even personal modifications to mods.</p>
+        </li>
+        <li>
+            <h4>Surplus/Shortage</h4>
+            <p>Display input surplus/shortage and use this value to calculate upstream output. E.g. A sulfur plant working at 80% will cause the sulfuric acid to work at 80%.</p>
+        </li>
+        <li>
+            <h4>Ratio view</h4>
+            <p>Have a different way of seeing the data. Ratio will display recipes only once, regardless of how many others uses it as input, and then sum the production for them all.</p>
+        </li>
+        <li>
+            <h4>Save/Share Setup</h4>
+            <p>A way to easily distribute information and/or discuss ratios.</p>
+        </li>
+        <li>
+            <h4>Language support</h4>
+            <p>I, currently, already read the game files for language (so, technically, all recipes are translated already), but the text on the site itself is not supported and thus i've locked language changes.</p>
+        </li>
+        <li>
+            <h4>Mobile support</h4>
+            <p>Even tho the layout doesn't break in smaller screens, it's hard to access/navigate.</p>
+        </li>
+    </ul>
+</section></div>
