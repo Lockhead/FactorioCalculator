@@ -1,0 +1,39 @@
+<div class="row statistic-header">
+    <label class="col-sm-4">Production / Cycle</label>
+    <div class="h5-side-text col-sm-8 text-right">
+        <label class="checkbox-inline">
+            <input type="checkbox" data-bind="checked:calculateBuildings"> Include Buildings
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" data-bind="checked:calculateCycle"> Include Cycle
+        </label>
+    </div>
+</div>
+
+<div class="col-sm-4">
+    <label class="form-control-label">Building</label>
+    <div data-bind="foreach:buildingProperties">
+        <div class="form-group">
+            <div class="input-group" data-bind="attr:{title:name}">
+                <span class="input-group-addon">
+                    <span class="glyphicon" data-bind="css:icon"></span>
+                </span>
+                <input type="text" class="form-control readonly" readonly data-bind="value:value">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-4">
+    <label class="form-control-label">Required Input</label>
+    <!-- ko foreach:inputProperties -->
+    <item-icon params="id: name  , value:value, readonly:1" class="form-group"></item-icon>
+    <!-- /ko -->
+</div>
+
+<div class="col-sm-4">
+    <label class="form-control-label">Expected Output</label>
+    <!-- ko foreach:outputProperties -->
+    <item-icon params="id: name  , value:value, readonly:1" class="form-group"></item-icon>
+    <!-- /ko -->
+</div>

@@ -1,0 +1,88 @@
+<article class="production-row col-sm-12" data-bind="visible:options.visible">
+    <section class="row production-row-header bg-primary" data-bind="css:{ 'visible-details':options.showRecipeDetails }">
+
+        <div class="col-sm-1" data-bind="visible:options.hasChildren">
+            <button type="button" class="btn btn-default" title="Show children recipes" data-bind="click:showChildrenClick">
+                <span class="glyphicon" aria-hidden="true" data-bind="css:options.showChildrenIcon"></span>
+            </button>
+        </div>
+        <div class="col-sm-1" data-bind="hidden:options.hasChildren">
+            <!--provides some spacing for good alignment-->
+        </div>
+        <div class="col-sm-5">
+            <label data-bind="text:header"></label>
+        </div>
+        <div class="col-sm-4">
+            <div class="row">
+                <item-icon class="col-sm-3 form-group" params="{ id:building().id, value:options.numberOfBuildings, type:'number' }"></item-icon>
+                <span class="col-sm-9" data-bind="foreach:stats.output">
+                    <item-icon class="form-group" params="{ id: name, value:value, readonly:1 }" data-bind="css:size"></item-icon>
+                </span>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-default" title="Display recipe details" data-bind="click:showRecipeDetailsClick">
+                <span class="glyphicon" aria-hidden="true" data-bind="css:options.showRecipeDetailsIcon"></span>
+            </button>
+            <button type="button" class="btn btn-default" title="Include all recipes used for input of this recipe" data-bind="click:includeChildrenClick, visible: options.hasInputs">
+                <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-danger pull-right" title="Remove this recipe from the table" data-bind="click:removeRecipeClick">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+        </div>
+
+    </section>
+    <section class="row production-row-details bg-info" data-bind="visible:options.showRecipeDetails">
+        <div data-bind="foreach:stats.input">
+            <item-icon class="form-group" params="{ id: name, value:value, readonly:1 }" data-bind="css:size"></item-icon>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <!-- ko foreach:stats.building -->
+                <div class="col-sm-4 form-group" data-bind="attr: { title: name }">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon" data-bind="css:icon"></span>
+                        </span>
+                        <input type="text" class="form-control readonly" readonly data-bind="value:value" />
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <item-icon class="col-sm-4 form-group" params="{ id: 'speed-module'        , value:(module.speed.level1.peek()     +' / '+module.speed.level2.peek()     +' / '+module.speed.level3.peek()     ), readonly:1 }"></item-icon>
+                <item-icon class="col-sm-4 form-group" params="{ id: 'productivity-module' , value:(module.production.level1.peek()+' / '+module.production.level2.peek()+' / '+module.production.level3.peek()), readonly:1 }"></item-icon>
+                <item-icon class="col-sm-4 form-group" params="{ id: 'effectivity-module'  , value:(module.efficiency.level1.peek()+' / '+module.efficiency.level2.peek()+' / '+module.efficiency.level3.peek()), readonly:1 }"></item-icon>
+            </div>
+        </div>
+    </section>
+    <section class="row production-row-children">
+
+        <!-- ko foreach:children -->
+        <!-- ko component: { 
+            name: 'production-row',
+                params: {
+                    recipe: recipe,
+                    module: module,
+                    building: building,
+                    children: children,
+                
+                    calculateCycle: $parent.options.calculateCycle,
+                    cycleLength: $parent.options.cycleLength,
+                    calculateBuildings: $parent.options.calculateBuildings,
+                    numberOfBuildings: $parent.options.numberOfBuildings,
+                
+                    visible: $parent.options.showChildren,
+                    visibleParent: $parent.options.visible,
+                
+                    removeRecipeClick: $parent.removeRecipeClick,
+                    includeChildrenClick: $parent.includeChildrenClick,
+                }
+            } -->
+        <!-- /ko -->
+        <!-- /ko -->
+    </section>
+</article>

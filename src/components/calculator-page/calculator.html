@@ -1,0 +1,45 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-1">
+            <button class="calculator-toggle btn btn-default" type="button" data-toggle="collapse" data-target=".calculator-collapse" data-bind="click:toggleClick">
+                <span class="glyphicon" data-bind="css:toggleIcon"></span>
+            </button>
+        </div>
+
+        <div class="col-sm-11">
+            <label class="form-control-label">Cycle length ( in seconds )</label>
+            <input data-bind="value:cycleLength" class="form-control" type="number" min="1" />
+        </div>
+    </div>
+
+    <div class="calculator-collapse well collapse in">
+
+        <section class="row">
+            <section class="col-sm-2">
+                <button type="button" class="btn btn-primary" data-bind="click:()=>addRecipe.call($data)" title="add only the selected recipe into the table">Save</button>
+            </section>
+        </section>
+        
+        <selection-recipe class="row" params="{ 
+            selectedRecipe: selectedRecipe, selectedModules: selectedModules }">
+        </selection-recipe>
+        <selection-building class="row" params="{ 
+            numberOfBuildings: numberOfBuildings, selectedBuilding: selectedBuilding, selectedRecipe: selectedRecipe, selectedModules: selectedModules }">
+        </selection-building>
+        <section class="row">
+            <selection-module class="col-sm-7" params="{ selectedModules: selectedModules }"></selection-module>
+            <statistic-view class="col-sm-5" params="{
+                selectedBuilding: selectedBuilding, selectedRecipe:selectedRecipe, selectedModules:selectedModules,
+                calculateCycle:calculateCycle, cycleLength:cycleLength, 
+                calculateBuildings:calculateBuildings, numberOfBuildings:numberOfBuildings }">
+            </statistic-view>
+        </section>
+    </div>
+</div>
+
+<production-table class="container-fluid" data-bind="visible:recipeTree().length>0" params="{
+    recipeTree:recipeTree, numberOfBuildings:numberOfBuildings, 
+    calculateCycle:calculateCycle, cycleLength:cycleLength, calculateBuildings:calculateBuildings,
+    removeRecipeClick:removeRecipe(), includeChildrenClick: includeChildren()}">
+</production-table>

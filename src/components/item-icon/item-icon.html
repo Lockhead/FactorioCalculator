@@ -1,0 +1,16 @@
+<div class="input-group" data-bind="attr:{ title:tooltip }">
+    <span class="input-group-addon">
+        <span class="factorio-icons" data-bind="css:getIconName()"></span>
+        <!-- ko if:displayName -->
+        <span data-bind="text:displayName"></span>
+        <!-- /ko -->
+    </span>
+    <!-- ko if:hasValue -->
+    <!-- ko if:readonly -->
+    <input class="form-control readonly" readonly data-bind="value:value, attr: { 'type': type }">
+    <!-- /ko -->
+    <!-- ko if:!readonly -->
+    <input class="form-control" data-bind="value:value, attr: { 'type': type }" min=0>
+    <!-- /ko -->
+    <!-- /ko -->
+</div>

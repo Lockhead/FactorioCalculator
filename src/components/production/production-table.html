@@ -1,0 +1,21 @@
+<section class="row table table-striped" data-bind="foreach: recipeTree">
+    <!-- ko component: { 
+        name:'production-row', 
+        params:{
+            recipe:                 recipe, 
+            module:                 module,
+            building:               building, 
+            children:               children,
+            
+            calculateCycle:         $parent.calculateCycle, 
+            cycleLength:            $parent.cycleLength, 
+            calculateBuildings:     $parent.calculateBuildings, 
+            numberOfBuildings:      $parent.numberOfBuildings,
+            
+            visible:                function() { return true; }, /* items added by the user are always visible */
+            visibleParent:          function() { return true; }, /* there's not Parent for itens added by users */
+            removeRecipeClick:      $parent.removeRecipeClick,
+            includeChildrenClick:   $parent.includeChildrenClick,
+        } } -->
+    <!-- /ko -->
+</section>

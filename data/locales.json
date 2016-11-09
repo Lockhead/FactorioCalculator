@@ -1,0 +1,13 @@
+{
+    "file_version": 1.0,
+    "game_version": 0.13,
+    "data": [{
+        "flag": "us",
+        "id": "en",
+        "display": "English"
+    }, {
+        "flag": "br",
+        "id": "pt-Br",
+        "display": "Brazilian Portuguese"
+    }]
+}

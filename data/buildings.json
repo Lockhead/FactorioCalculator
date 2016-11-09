@@ -1,0 +1,96 @@
+{
+    "file_version": 1.0,
+    "game_version": 0.13,
+    "data": [
+        {
+            "id": "electric-furnace",
+            "canMine": 0,
+            "speed": 2.0,
+            "production": 1.0,
+            "pollution": 0.90,
+            "energy": { "max": 180, "idle": 6 },
+            "energy_type": "electric"
+        },
+        {
+            "id": "steel-furnace",
+            "canMine": 0,
+            "speed": 2.0,
+            "production": 1.0,
+            "pollution": 3.60,
+            "energy": { "max": 180, "idle": 0 },
+            "energy_type": "burner"
+        },
+        {
+            "id": "stone-furnace",
+            "canMine": 0,
+            "speed": 1.0,
+            "production": 1.0,
+            "pollution": 1.80,
+            "energy": { "max": 180, "idle": 0 },
+            "energy_type": "burner"
+        },
+        {
+            "id": "assembling-machine-1",
+            "canMine": 0,
+            "speed": 0.5,
+            "production": 1.0,
+            "pollution": 3.0,
+            "energy": { "max": 90, "idle": 0 },
+            "energy_type": "electric"
+        },
+        {
+            "id": "assembling-machine-2",
+            "canMine": 0,
+            "speed": 0.75,
+            "production": 1.0,
+            "pollution": 2.4,
+            "energy": { "max": 150, "idle": 0 },
+            "energy_type": "electric"
+        },
+        {
+            "id": "assembling-machine-3",
+            "canMine": 0,
+            "speed": 1.25,
+            "production": 1.0,
+            "pollution": 1.8,
+            "energy": { "max": 210, "idle": 0 },
+            "energy_type": "electric"
+        },
+        {
+            "id": "oil-refinery",
+            "canMine": 0,
+            "speed": 1.0,
+            "production": 1.0,
+            "pollution": 3.60,
+            "energy": { "max": 420, "idle": 42 },
+            "energy_type": "electric"
+        },
+        {
+            "id": "chemical-plant",
+            "canMine": 0,
+            "speed": 1.25,
+            "production": 1.0,
+            "pollution": 1.8,
+            "energy": { "max": 210, "idle": 7 },
+            "energy_type": "electric"
+        },
+        {
+            "id": "burner-mining-drill",
+            "canMine": 1,
+            "speed": 0.35,
+            "production": 2.5,
+            "pollution": 10,
+            "energy": { "max": 300, "idle": 0 },
+            "energy_type": "burner"
+        },
+        {
+            "id": "electric-mining-drill",
+            "canMine": 1,
+            "speed": 0.50,
+            "production": 3.0,
+            "pollution": 9,
+            "energy": { "max": 90, "idle": 7 },
+            "energy_type": "electric"
+        }
+    ]
+}
