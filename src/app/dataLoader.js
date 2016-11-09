@@ -22,12 +22,12 @@ define(['knockout', 'jquery', 'app/LoadManager'], function(ko, $, Manager) {
     var Locales = new Manager(BASE_URL.replace('{0}', 'locales'), true);
     Locales.selected('en');
 
-    var Recipes = new Manager(BASE_URL.replace('{0}', 'recipes'), handleRecipeResult, 1);
+    var Recipes = new Manager(BASE_URL.replace('{0}', 'recipes'), handleRecipeResult, 'i18n');
     Recipes.getByOutput = function(id) {
         return this.mapOutput[id]
     }
 
-    var Buildings = new Manager(BASE_URL.replace('{0}', 'buildings'), true, -1);
+    var Buildings = new Manager(BASE_URL.replace('{0}', 'buildings'), true);
 
     var Config = new Manager(BASE_URL.replace('{0}', 'configuration'), false);
 

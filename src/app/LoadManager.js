@@ -1,18 +1,20 @@
 define(['knockout', 'jquery'], function(ko, $) {
 
-    function Manager(url, map, sort) {
+    function Manager(url, map, sortBy, sortAscending) {
         var $self = this;
         $self.available = ko.observable();
+        $self.available.subscribe(sorting.bind($self));
         $self.selected = ko.observable();
         $self.map = {};
-        $self.sort = sort || 0; // 1 - ascending ; -1 - descending ; 0 - none
+        $self.sortBy = sortBy || 0;
+        $self.sortUp = sortAscending || 1;
 
         var hasCustomMapping = typeof(map) === "function";
         var mappingFunction = hasCustomMapping ? map : undefined;
         var mapEnabled = !!map;
 
         $.getJSON(url)
-            .done((result) => $self.handleResult.apply($self, [result, mapEnabled, mappingFunction, sort]))
+            .done((result) => $self.handleResult.apply($self, [result, mapEnabled, mappingFunction]))
             .fail(() => console.log("error loading: " + url));
     }
 
@@ -20,27 +22,29 @@ define(['knockout', 'jquery'], function(ko, $) {
         return this.map[id];
     }
 
-    Manager.prototype.handleResult = function(result, enableMap, customMap, sortting) {
+    Manager.prototype.handleResult = function(result, enableMap, customMap) {
         var collection = result.data;
-        // odd behavior, the sortting does not sort O.o'
-        // switch (sortting) {
-        //     case 1:
-        //         {
-        //             collection = collection.sort((a, b) => a.id > b.id);
-        //             break;
-        //         }
-        //     case 2:
-        //         {
-        //             collection = collection.sort((a, b) => a.id < b.id);
-        //             break;
-        //         }
-        // }
 
         if (enableMap) {
             (customMap ? customMap : defaultMapping)(this, collection, defaultMapping);
         }
 
         this.available(collection);
+    }
+
+    function sorting(collection) {
+        var $self = this;
+
+        function getValue(item) {
+            return typeof(item) === "function" ? item() : item;
+        }
+
+        collection.sort(function(a, b) {
+            var x = getValue($self.sortBy ? a[$self.sortBy] : a);
+            var y = getValue($self.sortBy ? b[$self.sortBy] : b);
+
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0)) * ($self.sortUp ? 1 : -1);
+        })
     }
 
     function defaultMapping(context, collection) {
