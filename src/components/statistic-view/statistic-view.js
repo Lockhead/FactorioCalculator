@@ -102,7 +102,7 @@ define(['knockout', 'text!./statistic-view.html', 'app/formulae'], function(ko, 
                         write: function(desiredValue) {
                             var value = $f.GetNumberOfBuildings(desiredValue, inputs[k], cycleLength);
                             if (value !== numberOfBuildings) {
-                                params.numberOfBuildings(value);
+                                params.numberOfBuildings(value.toFixed(4));
                             }
                         },
                         owner: null

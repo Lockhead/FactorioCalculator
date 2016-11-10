@@ -98,7 +98,18 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
                 result.push({
                     name: k,
                     size: size,
-                    value: (inputs[k] * cycleLength * numberOfBuildings).toFixed(4)
+                    value: ko.computed({
+                        read: function() {
+                            return (inputs[k] * cycleLength * numberOfBuildings).toFixed(4);
+                        },
+                        write: function(desiredValue) {
+                            var value = $f.GetNumberOfBuildings(desiredValue, inputs[k], cycleLength);
+                            if (value !== numberOfBuildings) {
+                                $self.options.numberOfBuildings(value.toFixed(4));
+                            }
+                        },
+                        owner: null
+                    })
                 });
             }
 
