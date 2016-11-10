@@ -1,7 +1,9 @@
 define([], function() {
 
     function getValue(load, property) {
-        return (load ? (typeof(property) === "function" ? property() : property) : 0) | 0;
+        //  using bit OR (value | 0) to parse to number is causing the decimal to be lost
+        var value = load ? (typeof(property) === "function" ? property() : property) : 0;
+        return value && !isNaN(value) ? parseFloat(value) : 0;
     }
 
     function extractModuleCount(selectedModules, loadProd, loadSpeed, loadEff) {
