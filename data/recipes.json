@@ -1877,7 +1877,7 @@
     }, {
         "id": "rocket-part",
         "time": 3,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "building": ["rocket-silo"],
         "input": {
             "low-density-structure": 10,
             "rocket-fuel": 10,
