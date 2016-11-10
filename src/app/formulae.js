@@ -124,12 +124,17 @@ define([], function() {
         });
     }
 
+    function _getNumberOfBuildings(desiredValue, valuePerSecond, time) {
+        return parseFloat(desiredValue) / (valuePerSecond * time);
+    }
+
     return {
         GetEnergyMultiplier: _getEnergyMultiplier,
         GetPollutionMultiplier: _getPollutionMultiplier,
         GetProductionMultiplier: _getProductionMultiplier,
         GetSpeedMultiplier: _getSpeedMultiplier,
         GetInputPerSecond: _getPerSecondInputRecipes,
-        GetOutputPerSecond: _getPerSecondOutputRecipes
+        GetOutputPerSecond: _getPerSecondOutputRecipes,
+        GetNumberOfBuildings: _getNumberOfBuildings
     }
 });
