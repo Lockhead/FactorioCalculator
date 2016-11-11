@@ -97,16 +97,16 @@ define(['knockout', 'text!./statistic-view.html', 'app/formulae'], function(ko, 
                     name: k,
                     value: ko.computed({
                         read: function() {
-                            return (inputs[k] * cycleLength * numberOfBuildings).toFixed(4);
+                            return (inputs[this] * cycleLength * numberOfBuildings).toFixed(4);
                         },
                         write: function(desiredValue) {
-                            var value = $f.GetNumberOfBuildings(desiredValue, inputs[k], cycleLength);
+                            var value = $f.GetNumberOfBuildings(desiredValue, inputs[this], cycleLength);
                             if (value !== numberOfBuildings) {
                                 params.numberOfBuildings(value.toFixed(4));
                             }
                         },
                         owner: null
-                    })
+                    }, k)
                 });
             }
 
