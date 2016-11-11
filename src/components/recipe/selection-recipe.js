@@ -1,7 +1,7 @@
 define(['knockout', 'text!./selection-recipe.html', 'data', 'app/formulae'], function(ko, template, dataLoader, $f) {
 
     var MAX_SIZE = 12;
-    
+
     function SelectionRecipe(params) {
         var $self = this;
         $self.selectedRecipe = params.selectedRecipe;
@@ -11,10 +11,12 @@ define(['knockout', 'text!./selection-recipe.html', 'data', 'app/formulae'], fun
         $self.inputSize = ko.computed(function() {
             var selectedRecipe = $self.selectedRecipe();
             var size = 0;
+            var length = 0;
             if (!!selectedRecipe) {
-                size = Math.floor(MAX_SIZE / Object.keys(selectedRecipe.input).length);
+                length = Object.keys(selectedRecipe.input).length;
+                size = Math.floor(MAX_SIZE / length);
             }
-            return "col-sm-" + size;
+            return "col-sm-" + (length > 4 ? size * 2 : size) + " col-lg-" + size;
         });
         $self.outputSize = ko.computed(function() {
             var selectedRecipe = $self.selectedRecipe();
@@ -22,7 +24,7 @@ define(['knockout', 'text!./selection-recipe.html', 'data', 'app/formulae'], fun
             if (!!selectedRecipe) {
                 size = Math.floor(MAX_SIZE / Object.keys(selectedRecipe.output).length);
             }
-            return "col-sm-" + size;
+            return "col-sm-" + (length > 4 ? size * 2 : size) + " col-lg-" + size;
         });
         $self.outputText = ko.computed(function() {
 

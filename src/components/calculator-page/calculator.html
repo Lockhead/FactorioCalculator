@@ -28,12 +28,12 @@
             numberOfBuildings: numberOfBuildings, selectedBuilding: selectedBuilding, selectedRecipe: selectedRecipe, selectedModules: selectedModules }">
         </selection-building>
         <section class="row">
-            <selection-module class="col-sm-7" params="{ selectedModules: selectedModules }"></selection-module>
-            <statistic-view class="col-sm-5" params="{
+            <statistic-view class="col-lg-6" params="{
                 selectedBuilding: selectedBuilding, selectedRecipe:selectedRecipe, selectedModules:selectedModules,
                 calculateCycle:calculateCycle, cycleLength:cycleLength, 
                 calculateBuildings:calculateBuildings, numberOfBuildings:numberOfBuildings }">
             </statistic-view>
+            <selection-module class="col-lg-6" params="{ selectedModules: selectedModules }"></selection-module>
         </section>
     </div>
 </div>

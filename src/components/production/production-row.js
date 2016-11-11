@@ -21,8 +21,9 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
             visibleParent: params.visibleParent,
             hasInputs: ko.computed(() => Object.keys($self.recipe.input || {}).length > 0),
             hasChildren: ko.computed(() => $self.children().length > 0),
-            showChildren: ko.observable(false),
 
+            showChildren: ko.observable(false),
+            showEditModule: ko.observable(false),
             showRecipeDetails: ko.observable(false),
         }
         $self.options.showChildrenIcon = ko.computed(showIconFn($self.options.showChildren, 'glyphicon-chevron-', 'down', 'right'));
@@ -37,6 +38,18 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
         $self.removeRecipeFromParentClick = params.removeRecipeClick;
         $self.includeChildrenClick = params.includeChildrenClick;
         $self.removeRecipeClick = $self.removeRecipeFn();
+
+        $self.headerSizes = $self.stats.output.peek().length > 1 ? {
+            breaker: 'hidden-lg hidden-md',
+            recipe: 'col-xs-12 col-sm-6 col-md-5',
+            building: 'col-xs-12 col-sm-4 col-md-3',
+            output: 'col-xs-12 col-sm-8 col-md-12'
+        } : {
+            breaker: 'hidden-lg hidden-md',
+            recipe: 'col-xs-12 col-sm-6 col-md-3',
+            building: 'col-xs-12 col-sm-4 col-md-2',
+            output: 'col-xs-12 col-sm-8 col-md-3'
+        }
     }
 
     function toggleOption(observableOption) {
@@ -72,7 +85,9 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
             var numberOfBuildings = $self.options.numberOfBuildings();
 
             var inputs = $f.GetInputPerSecond($self.recipe, $self.building, $f.GetSpeedMultiplier($self.module));
-            var size = 'col-sm-' + Math.round(12 / Object.keys(inputs).length);
+            var length = Object.keys(inputs).length;
+            var size = 'col-lg-' + Math.round(12 / length) + ' col-sm-' + Math.round(24 / length);
+
             for (var k in inputs) {
                 result.push({
                     name: k,
@@ -164,6 +179,11 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
 
     ProductionRowViewModel.prototype.showRecipeDetailsClick = function() {
         toggleOption(this.options.showRecipeDetails);
+    }
+
+    ProductionRowViewModel.prototype.editModules = function() {
+        var $self = this;
+        $self.options.showEditModule(!$self.options.showEditModule.peek());
     }
 
     return {
