@@ -34,11 +34,6 @@ define(['knockout', 'crossroads', 'hasher'], function(ko, crossroads, hasher) {
         routes: [{
             url: '',
             params: {
-                page: 'home-page'
-            }
-        }, {
-            url: 'calculator',
-            params: {
                 page: 'calculator-page'
             }
         }, {
