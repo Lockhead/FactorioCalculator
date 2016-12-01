@@ -6,7 +6,9 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
         $self.building = params.building;
         $self.module = params.module;
         $self.children = params.children;
+        $self.inputProduction = {};
         $self.header = $i(params.recipe.id);
+        $self.supply = ko.observable();
 
         $self.options = {
             calculateCycle: params.calculateCycle,
@@ -20,6 +22,17 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
             }),
             visibleParent: params.visibleParent,
             hasInputs: ko.computed(() => Object.keys($self.recipe.input || {}).length > 0),
+            hasSupply: ko.computed(() => Object.keys($self.supply() || {}).length > 0),
+            supplyIcon: ko.computed(() => {
+                var supplyObj = $self.supply() || {};
+                var supplyKeys = Object.keys(supplyObj);
+                var enoughInput = supplyKeys.length > 0;
+                ko.utils.arrayForEach(supplyKeys, function(item) {
+                    enoughInput = enoughInput && supplyObj[item] >= 1.0;
+                });
+                return 'glyphicon glyphicon-thumbs-' + (enoughInput ? 'up' : 'down');
+            }),
+            supplyTooltip: ko.observable(''),
             hasChildren: ko.computed(() => $self.children().length > 0),
 
             showChildren: ko.observable(false),
@@ -42,13 +55,17 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
         $self.headerSizes = $self.stats.output.peek().length > 1 ? {
             breaker: 'hidden-lg hidden-md',
             recipe: 'col-xs-12 col-sm-6 col-md-5',
-            building: 'col-xs-12 col-sm-4 col-md-3',
-            output: 'col-xs-12 col-sm-8 col-md-12'
+            building: 'col-xs-12 col-sm-3 col-md-3',
+            output: 'col-xs-10 col-sm-7 col-md-10'
         } : {
             breaker: 'hidden-lg hidden-md',
             recipe: 'col-xs-12 col-sm-6 col-md-3',
-            building: 'col-xs-12 col-sm-4 col-md-2',
-            output: 'col-xs-12 col-sm-8 col-md-3'
+            building: 'col-xs-12 col-sm-3 col-md-2',
+            output: 'col-xs-10 col-sm-7 col-md-2'
+        }
+
+        if (params.parentViewModel) {
+            params.parentViewModel.register($self);
         }
     }
 
@@ -68,6 +85,14 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
                 break;
             }
         }
+    }
+
+    function _extractNameValueMap(array) {
+        var dic = {};
+        ko.utils.arrayForEach(array, function(item) {
+            dic[item.name] = item.value;
+        });
+        return dic;
     }
 
     ProductionRowViewModel.prototype.removeRecipeFn = function() {
@@ -173,6 +198,26 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
         }
     }
 
+    ProductionRowViewModel.prototype.computeSupply = function() {
+        var $self = this;
+        var children = $self.children.peek();
+
+        if (children.length > 0) {
+            var inputs = _extractNameValueMap($self.stats.input.peek());
+
+            var childrenProduction = {};
+            for (var c = 0; c < children.length; c++) {
+                var child = children[c].recipe.id;
+                if ($self.inputProduction[child]) {
+                    var childProduction = $self.inputProduction[child].peek();
+                    var childOutput = _extractNameValueMap(childProduction)[child].peek();
+                    childrenProduction[child] = childOutput / inputs[child];
+                }
+            }
+            $self.supply(childrenProduction);
+        }
+    }
+
     ProductionRowViewModel.prototype.showChildrenClick = function() {
         toggleOption(this.options.showChildren);
     }
@@ -184,6 +229,18 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
     ProductionRowViewModel.prototype.editModules = function() {
         var $self = this;
         $self.options.showEditModule(!$self.options.showEditModule.peek());
+    }
+
+    ProductionRowViewModel.prototype.register = function(childProductionViewModel) {
+        var childRecipeId = childProductionViewModel.recipe.id;
+        this.inputProduction[childRecipeId] = childProductionViewModel.stats.output;
+        var bind = this.computeSupply.bind(this);
+
+        var expectProduction = _extractNameValueMap(this.stats.input.peek())[childRecipeId];
+        _extractNameValueMap(childProductionViewModel.stats.output.peek())[childRecipeId](expectProduction);
+
+        this.stats.output.subscribe(bind);
+        childProductionViewModel.stats.output.subscribe(bind);
     }
 
     return {
