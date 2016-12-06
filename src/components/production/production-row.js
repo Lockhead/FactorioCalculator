@@ -23,16 +23,6 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
             visibleParent: params.visibleParent,
             hasInputs: ko.computed(() => Object.keys($self.recipe.input || {}).length > 0),
             hasSupply: ko.computed(() => Object.keys($self.supply() || {}).length > 0),
-            supplyIcon: ko.computed(() => {
-                var supplyObj = $self.supply() || {};
-                var supplyKeys = Object.keys(supplyObj);
-                var enoughInput = supplyKeys.length > 0;
-                ko.utils.arrayForEach(supplyKeys, function(item) {
-                    enoughInput = enoughInput && supplyObj[item] >= 1.0;
-                });
-                return 'glyphicon glyphicon-thumbs-' + (enoughInput ? 'up' : 'down');
-            }),
-            supplyTooltip: ko.observable(''),
             hasChildren: ko.computed(() => $self.children().length > 0),
 
             showChildren: ko.observable(false),
@@ -41,6 +31,29 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
         }
         $self.options.showChildrenIcon = ko.computed(showIconFn($self.options.showChildren, 'glyphicon-chevron-', 'down', 'right'));
         $self.options.showRecipeDetailsIcon = ko.computed(showIconFn($self.options.showRecipeDetails, 'glyphicon-eye-', 'close', 'open'));
+
+        $self.options.supplyIcon = ko.computed(() => {
+            var result = 'glyphicon glyphicon-';
+            var enoughInput = $self.options.hasSupply.peek();
+            var supply = $self.supply();
+            if (enoughInput) {
+                _foreachObjectProperty(supply, item => {
+                    enoughInput = enoughInput && item >= 1.0;
+                });
+                result += (enoughInput ? 'ok' : 'remove');
+            }
+            else {
+                result += 'remove';
+            }
+            return result + '-circle';
+        });
+        $self.options.supplyTooltip = ko.computed(() => {
+            var text = ["Supply summary "];
+            _foreachObjectProperty($self.supply(), (value, name) => {
+                text.push($i(name) + ': ' + (value * 100).toFixed(0) + "%");
+            });
+            return text.join('\n');
+        });
 
         $self.stats = {
             input: ko.computed($self.computeInput()),
@@ -93,6 +106,12 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
             dic[item.name] = item.value;
         });
         return dic;
+    }
+
+    function _foreachObjectProperty(object, callback) {
+        var obj = object || {};
+        var keys = Object.keys(obj);
+        ko.utils.arrayForEach(keys, key => callback(obj[key], key));
     }
 
     ProductionRowViewModel.prototype.removeRecipeFn = function() {
