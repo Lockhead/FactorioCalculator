@@ -27,6 +27,9 @@
                 <item-icon class="form-group" params="{ id: name, value:value, type:'number' }" data-bind="css:size"></item-icon>
             </div>
         </span>
+        <span class="text-left col-xs-2 col-md-1" data-bind="visible:options.hasSupply">
+            <span class="supply-icon glyphicon" data-bind="css:options.supplyIcon, attr:{ title: options.supplyTooltip }"></span>
+        </span>
 
 
     </section>
@@ -94,24 +97,24 @@
         <!-- ko foreach:children -->
         <!-- ko component: { 
             name: 'production-row',
-                params: {
-                    recipe: recipe,
-                    module: module,
-                    building: building,
-                    children: children,
-                
-                    calculateCycle: $parent.options.calculateCycle,
-                    cycleLength: $parent.options.cycleLength,
-                    calculateBuildings: $parent.options.calculateBuildings,
-                    numberOfBuildings: $parent.options.numberOfBuildings,
-                
-                    visible: $parent.options.showChildren,
-                    visibleParent: $parent.options.visible,
-                
-                    removeRecipeClick: $parent.removeRecipeClick,
-                    includeChildrenClick: $parent.includeChildrenClick,
-                }
-            } -->
+            params: {
+                recipe: recipe,
+                module: module,
+                building: building,
+                children: children,
+            
+                calculateCycle: $parent.options.calculateCycle,
+                cycleLength: $parent.options.cycleLength,
+                calculateBuildings: $parent.options.calculateBuildings,
+                numberOfBuildings: $parent.options.numberOfBuildings,
+            
+                visible: $parent.options.showChildren,
+                visibleParent: $parent.options.visible,
+            
+                removeRecipeClick: $parent.removeRecipeClick,
+                includeChildrenClick: $parent.includeChildrenClick,
+                parentViewModel: $parent
+            } } -->
         <!-- /ko -->
         <!-- /ko -->
     </section>

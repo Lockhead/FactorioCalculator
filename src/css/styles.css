@@ -128,3 +128,8 @@ production-table {
 .production-row-children {
     padding-left: 8px;
 }
+
+.supply-icon {
+    font-size: 24px;
+    margin-top: 8px;
+}

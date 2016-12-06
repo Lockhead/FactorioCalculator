@@ -6,7 +6,9 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
         $self.building = params.building;
         $self.module = params.module;
         $self.children = params.children;
+        $self.inputProduction = {};
         $self.header = $i(params.recipe.id);
+        $self.supply = ko.observable();
 
         $self.options = {
             calculateCycle: params.calculateCycle,
@@ -20,6 +22,7 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
             }),
             visibleParent: params.visibleParent,
             hasInputs: ko.computed(() => Object.keys($self.recipe.input || {}).length > 0),
+            hasSupply: ko.computed(() => Object.keys($self.supply() || {}).length > 0),
             hasChildren: ko.computed(() => $self.children().length > 0),
 
             showChildren: ko.observable(false),
@@ -28,6 +31,29 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
         }
         $self.options.showChildrenIcon = ko.computed(showIconFn($self.options.showChildren, 'glyphicon-chevron-', 'down', 'right'));
         $self.options.showRecipeDetailsIcon = ko.computed(showIconFn($self.options.showRecipeDetails, 'glyphicon-eye-', 'close', 'open'));
+
+        $self.options.supplyIcon = ko.computed(() => {
+            var result = 'glyphicon glyphicon-';
+            var enoughInput = $self.options.hasSupply.peek();
+            var supply = $self.supply();
+            if (enoughInput) {
+                _foreachObjectProperty(supply, item => {
+                    enoughInput = enoughInput && item >= 1.0;
+                });
+                result += (enoughInput ? 'ok' : 'remove');
+            }
+            else {
+                result += 'remove';
+            }
+            return result + '-circle';
+        });
+        $self.options.supplyTooltip = ko.computed(() => {
+            var text = ["Supply summary "];
+            _foreachObjectProperty($self.supply(), (value, name) => {
+                text.push($i(name) + ': ' + (value * 100).toFixed(0) + "%");
+            });
+            return text.join('\n');
+        });
 
         $self.stats = {
             input: ko.computed($self.computeInput()),
@@ -42,13 +68,17 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
         $self.headerSizes = $self.stats.output.peek().length > 1 ? {
             breaker: 'hidden-lg hidden-md',
             recipe: 'col-xs-12 col-sm-6 col-md-5',
-            building: 'col-xs-12 col-sm-4 col-md-3',
-            output: 'col-xs-12 col-sm-8 col-md-12'
+            building: 'col-xs-12 col-sm-3 col-md-3',
+            output: 'col-xs-10 col-sm-7 col-md-10'
         } : {
             breaker: 'hidden-lg hidden-md',
             recipe: 'col-xs-12 col-sm-6 col-md-3',
-            building: 'col-xs-12 col-sm-4 col-md-2',
-            output: 'col-xs-12 col-sm-8 col-md-3'
+            building: 'col-xs-12 col-sm-3 col-md-2',
+            output: 'col-xs-10 col-sm-7 col-md-2'
+        }
+
+        if (params.parentViewModel) {
+            params.parentViewModel.register($self);
         }
     }
 
@@ -68,6 +98,20 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
                 break;
             }
         }
+    }
+
+    function _extractNameValueMap(array) {
+        var dic = {};
+        ko.utils.arrayForEach(array, function(item) {
+            dic[item.name] = item.value;
+        });
+        return dic;
+    }
+
+    function _foreachObjectProperty(object, callback) {
+        var obj = object || {};
+        var keys = Object.keys(obj);
+        ko.utils.arrayForEach(keys, key => callback(obj[key], key));
     }
 
     ProductionRowViewModel.prototype.removeRecipeFn = function() {
@@ -173,6 +217,26 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
         }
     }
 
+    ProductionRowViewModel.prototype.computeSupply = function() {
+        var $self = this;
+        var children = $self.children.peek();
+
+        if (children.length > 0) {
+            var inputs = _extractNameValueMap($self.stats.input.peek());
+
+            var childrenProduction = {};
+            for (var c = 0; c < children.length; c++) {
+                var child = children[c].recipe.id;
+                if ($self.inputProduction[child]) {
+                    var childProduction = $self.inputProduction[child].peek();
+                    var childOutput = _extractNameValueMap(childProduction)[child].peek();
+                    childrenProduction[child] = childOutput / inputs[child];
+                }
+            }
+            $self.supply(childrenProduction);
+        }
+    }
+
     ProductionRowViewModel.prototype.showChildrenClick = function() {
         toggleOption(this.options.showChildren);
     }
@@ -184,6 +248,18 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
     ProductionRowViewModel.prototype.editModules = function() {
         var $self = this;
         $self.options.showEditModule(!$self.options.showEditModule.peek());
+    }
+
+    ProductionRowViewModel.prototype.register = function(childProductionViewModel) {
+        var childRecipeId = childProductionViewModel.recipe.id;
+        this.inputProduction[childRecipeId] = childProductionViewModel.stats.output;
+        var bind = this.computeSupply.bind(this);
+
+        var expectProduction = _extractNameValueMap(this.stats.input.peek())[childRecipeId];
+        _extractNameValueMap(childProductionViewModel.stats.output.peek())[childRecipeId](expectProduction);
+
+        this.stats.output.subscribe(bind);
+        childProductionViewModel.stats.output.subscribe(bind);
     }
 
     return {

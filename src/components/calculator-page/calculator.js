@@ -65,6 +65,7 @@ define(['knockout', 'text!./calculator.html', 'data', /*pre-load*/ 'components/p
                 recipeViewModel.children.pushAll(inputs);
                 recipeViewModel.options.showChildren(true);
             }
+            setTimeout(recipeViewModel.computeSupply.bind(recipeViewModel), 100);
         }
     }
     CalculatorViewModel.prototype.toggleClick = function() {
