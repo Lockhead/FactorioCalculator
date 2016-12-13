@@ -1,4 +1,4 @@
-define(['knockout', './router', 'jquery', 'bootstrap', 'knockout-projections', 'knockout-extensions', 'data'], function(ko, router) {
+define(['knockout', './router', 'jquery', 'bootstrap', 'js-extensions', 'knockout-projections', 'knockout-extensions', 'data'], function(ko, router) {
 
     // Components can be packaged as AMD modules, such as the following:
     ko.components.register('nav-bar', {

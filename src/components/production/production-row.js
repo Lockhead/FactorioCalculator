@@ -37,7 +37,7 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
             var enoughInput = $self.options.hasSupply.peek();
             var supply = $self.supply();
             if (enoughInput) {
-                _foreachObjectProperty(supply, item => (enoughInput = enoughInput && item >= 1.0));
+                Object.each(supply, item => (enoughInput = enoughInput && item >= 1.0));
                 result += (enoughInput ? 'ok' : 'remove');
             }
             else {
@@ -47,7 +47,7 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
         });
         $self.options.supplyTooltip = ko.computed(() => {
             var text = ["Supply summary "];
-            _foreachObjectProperty($self.supply(), (value, name) => {
+            Object.each($self.supply(), (value, name) => {
                 text.push($i(name) + ': ' + (value * 100).toFixed(0) + "%");
             });
             return text.join('\n');
@@ -108,23 +108,15 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
         return dictionary;
     }
 
-    function _foreachObjectProperty(object, callback) {
-        var obj = object || {};
-        var keys = Object.keys(obj);
-        ko.utils.arrayForEach(keys, key => callback(obj[key], key));
-    }
-
     function _setProduction(parentInputs, childOutputs) {
-        var parentKeys = Object.keys(parentInputs);
-        for (var r = 0; r < parentKeys.length; r++) {
-            var key = parentKeys[r];
+        Object.each(parentInputs, function(value, key) {
             for (var c = 0; c < childOutputs.length; c++) {
                 if (childOutputs[c].name == key) {
-                    childOutputs[c].value(parentInputs[key]);
+                    childOutputs[c].value(value);
                     break;
                 }
             }
-        }
+        })
     }
 
     ProductionRowViewModel.prototype.removeRecipeFn = function() {
@@ -235,18 +227,19 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
         var children = $self.children.peek();
 
         if (children.length > 0) {
-            var inputs = _extractNameValueMap($self.stats.input.peek());
-
             var childrenProduction = {};
-            for (var c = 0; c < children.length; c++) {
-                var child = children[c].recipe.id;
-                if ($self.inputProduction[child]) {
-                    var childProduction = $self.inputProduction[child].peek();
-                    var childOutput = _extractNameValueMap(childProduction)[child].peek();
-                    childrenProduction[child] = childOutput / inputs[child];
-                }
-            }
-            $self.supply(childrenProduction);
+            Object.each($self.inputProduction, function(prop) {
+                var childProduction = _extractNameValueMap(prop.peek());
+                Object.merge(childrenProduction, childProduction);
+            });
+
+            var supply = {};
+            Object.each(_extractNameValueMap($self.stats.input.peek()), function(input, key) {
+                var output = childrenProduction[key].peek();
+                supply[key] = output / input;
+            });
+
+            $self.supply(supply);
         }
     }
 
@@ -268,8 +261,7 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
         this.inputProduction[childRecipeId] = childProductionViewModel.stats.output;
 
         var recipeInputs = _extractNameValueMap(this.stats.input.peek());
-        var childOutput = childProductionViewModel.stats.output.peek();
-        _setProduction(recipeInputs, childOutput);
+        _setProduction(recipeInputs, this.inputProduction[childRecipeId].peek());
 
         var bind = this.computeSupply.bind(this);
         this.stats.output.subscribe(bind);

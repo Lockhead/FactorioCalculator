@@ -12,6 +12,7 @@ var require = {
         "knockout":             "bower_modules/knockout/dist/knockout.debug",
         "knockout-projections": "bower_modules/knockout-projections/dist/knockout-projections",
         "knockout-extensions":  "app/knockout-extensions",
+        "js-extensions":        "app/extensions",
         "data":                 "app/dataLoader",
         "i18n":                 "app/i18n"
     },
