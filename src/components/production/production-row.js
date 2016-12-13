@@ -37,9 +37,7 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
             var enoughInput = $self.options.hasSupply.peek();
             var supply = $self.supply();
             if (enoughInput) {
-                _foreachObjectProperty(supply, item => {
-                    enoughInput = enoughInput && item >= 1.0;
-                });
+                _foreachObjectProperty(supply, item => (enoughInput = enoughInput && item >= 1.0));
                 result += (enoughInput ? 'ok' : 'remove');
             }
             else {

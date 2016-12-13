@@ -335,7 +335,7 @@
         }
     }, {
         "id": "electronic-circuit",
-        "time": 1,
+        "time": 0.5,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-plate": 1,
@@ -426,7 +426,7 @@
         }
     }, {
         "id": "copper-cable",
-        "time": 1,
+        "time": 0.5,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "copper-plate": 1
