@@ -99,17 +99,32 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
     }
 
     function _extractNameValueMap(array) {
-        var dic = {};
+        var dictionary = {};
+
         ko.utils.arrayForEach(array, function(item) {
-            dic[item.name] = item.value;
+            dictionary[item.name] = item.value;
         });
-        return dic;
+
+        return dictionary;
     }
 
     function _foreachObjectProperty(object, callback) {
         var obj = object || {};
         var keys = Object.keys(obj);
         ko.utils.arrayForEach(keys, key => callback(obj[key], key));
+    }
+
+    function _setProduction(parentInputs, childOutputs) {
+        var parentKeys = Object.keys(parentInputs);
+        for (var r = 0; r < parentKeys.length; r++) {
+            var key = parentKeys[r];
+            for (var c = 0; c < childOutputs.length; c++) {
+                if (childOutputs[c].name == key) {
+                    childOutputs[c].value(parentInputs[key]);
+                    break;
+                }
+            }
+        }
     }
 
     ProductionRowViewModel.prototype.removeRecipeFn = function() {
@@ -251,11 +266,12 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
     ProductionRowViewModel.prototype.register = function(childProductionViewModel) {
         var childRecipeId = childProductionViewModel.recipe.id;
         this.inputProduction[childRecipeId] = childProductionViewModel.stats.output;
+
+        var recipeInputs = _extractNameValueMap(this.stats.input.peek());
+        var childOutput = childProductionViewModel.stats.output.peek();
+        _setProduction(recipeInputs, childOutput);
+
         var bind = this.computeSupply.bind(this);
-
-        var expectProduction = _extractNameValueMap(this.stats.input.peek())[childRecipeId];
-        _extractNameValueMap(childProductionViewModel.stats.output.peek())[childRecipeId](expectProduction);
-
         this.stats.output.subscribe(bind);
         childProductionViewModel.stats.output.subscribe(bind);
     }
