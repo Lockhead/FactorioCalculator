@@ -10,11 +10,10 @@ Object.merge = (!!Object.merge ? Object.merge : function() {
 });
 
 Object.each = (!!Object.each ? Object.each : function(object, callback) {
-    if (callback) {
-        var obj = object || {};
-        var keys = Object.keys(obj);
+    if (object && callback) {
+        var keys = Object.keys(object);
         for (var k in keys) {
-            callback(obj[keys[k]], keys[k]);
+            callback(object[keys[k]], keys[k]);
         }
     }
 })
