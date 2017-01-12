@@ -325,7 +325,7 @@
         }
     }, {
         "id": "iron-gear-wheel",
-        "time": 1,
+        "time": 0.5,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-plate": 2
