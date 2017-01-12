@@ -381,7 +381,7 @@
         }
     }, {
         "id": "inserter",
-        "time": 1,
+        "time": 0.5,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "electronic-circuit": 1,
@@ -393,7 +393,7 @@
         }
     }, {
         "id": "burner-inserter",
-        "time": 1,
+        "time": 0.5,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-plate": 1,
@@ -735,7 +735,7 @@
         }
     }, {
         "id": "long-handed-inserter",
-        "time": 1,
+        "time": 0.5,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-gear-wheel": 1,
@@ -747,7 +747,7 @@
         }
     }, {
         "id": "fast-inserter",
-        "time": 1,
+        "time": 0.5,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "electronic-circuit": 2,
@@ -759,7 +759,7 @@
         }
     }, {
         "id": "filter-inserter",
-        "time": 1,
+        "time": 0.5,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "fast-inserter": 1,
@@ -770,7 +770,7 @@
         }
     }, {
         "id": "stack-inserter",
-        "time": 1,
+        "time": 0.5,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-gear-wheel": 15,
@@ -783,7 +783,7 @@
         }
     }, {
         "id": "stack-filter-inserter",
-        "time": 1,
+        "time": 0.5,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "stack-inserter": 1,
