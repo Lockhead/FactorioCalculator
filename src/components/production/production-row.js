@@ -1,4 +1,4 @@
-define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], function(ko, template, $f, $i) {
+define(['knockout', 'text!./production-row.html', 'data', 'app/formulae', 'i18n'], function(ko, template, $d, $f, $i) {
 
     function ProductionRowViewModel(params) {
         var $self = this;
@@ -6,6 +6,10 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
         $self.building = {
             selected: params.building,
             available: params.recipe.building
+        };
+        $self.building.available.observe = function(newBuildingId) {
+            var building = $d.buildings.get(newBuildingId)
+            $self.building.selected(building);
         };
         $self.module = params.module;
         $self.children = params.children;

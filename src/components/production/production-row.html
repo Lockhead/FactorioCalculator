@@ -21,7 +21,8 @@
             <label data-bind="text:header"></label>
         </div>
         <div data-bind="css:headerSizes.breaker" class="clearfix"></div>
-        <item-icon data-bind="css:headerSizes.building" class="form-group" params="{ id:building.selected().id, value:options.numberOfBuildings, type:'number' }"></item-icon>
+        <item-icon data-bind="css:headerSizes.building" class="form-group" params="{ id:building.selected().id, 
+            value:options.numberOfBuildings, type:'number', valueOptions:building.available }"></item-icon>
         <span data-bind="css:headerSizes.output">
             <div class="row" data-bind="foreach:stats.output">
                 <item-icon class="form-group" params="{ id: name, value:value, type:'number' }" data-bind="css:size"></item-icon>
