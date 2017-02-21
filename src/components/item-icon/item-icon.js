@@ -20,6 +20,7 @@ define(['knockout', 'text!./item-icon.html', 'i18n'], function(ko, template, $i)
         $self.hasOptions = !!params.valueOptions && params.valueOptions.length > 1;
         $self.optionsAvailable = [];
         if ($self.hasOptions) {
+            $self.optionObservable = params.valueOptions.observe;
             for (var i = 0; i < params.valueOptions.length; i++) {
                 var opt = params.valueOptions[i];
                 $self.optionsAvailable.push({
@@ -42,6 +43,9 @@ define(['knockout', 'text!./item-icon.html', 'i18n'], function(ko, template, $i)
     }
     ItemIconViewModel.prototype.setOption = function(selectedBuilding) {
         this.id(selectedBuilding.id);
+        if (this.optionObservable) {
+            this.optionObservable(selectedBuilding.id);
+        }
     }
 
     return {
