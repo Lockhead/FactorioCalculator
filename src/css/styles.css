@@ -133,3 +133,47 @@ production-table {
     font-size: 24px;
     margin-top: 8px;
 }
+
+item-icon .dropdown-toggle {
+    background: #eee;
+}
+
+item-icon .dropdown-toggle,
+item-icon .dropdown-toggle:hover {
+    color: #555;
+}
+
+item-icon .dropdown-toggle:hover {
+    background: #ddd;
+}
+
+item-icon .dropdown-toggle:after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .3em;
+    vertical-align: middle;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-left: .3em solid transparent;
+}
+
+item-icon .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 3px 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #292b2c;
+    text-align: inherit;
+    white-space: nowrap;
+    background: 0 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+item-icon .dropdown-item:hover {
+    background: #eee;
+    border-left: 4px solid #ddd;
+}

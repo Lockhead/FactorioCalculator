@@ -1,9 +1,16 @@
-define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], function(ko, template, $f, $i) {
+define(['knockout', 'text!./production-row.html', 'data', 'app/formulae', 'i18n'], function(ko, template, $d, $f, $i) {
 
     function ProductionRowViewModel(params) {
         var $self = this;
         $self.recipe = params.recipe;
-        $self.building = params.building;
+        $self.building = {
+            selected: params.building,
+            available: params.recipe.building
+        };
+        $self.building.available.observe = function(newBuildingId) {
+            var building = $d.buildings.get(newBuildingId)
+            $self.building.selected(building);
+        };
         $self.module = params.module;
         $self.children = params.children;
         $self.inputProduction = {};
@@ -133,7 +140,7 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
             var cycleLength = $self.options.cycleLength();
             var numberOfBuildings = $self.options.numberOfBuildings();
 
-            var inputs = $f.GetInputPerSecond($self.recipe, $self.building, $f.GetSpeedMultiplier($self.module));
+            var inputs = $f.GetInputPerSecond($self.recipe, $self.building.selected, $f.GetSpeedMultiplier($self.module));
             var length = Object.keys(inputs).length;
             var size = 'col-lg-' + Math.round(12 / length) + ' col-sm-' + Math.round(24 / length);
 
@@ -156,7 +163,7 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
             var cycleLength = $self.options.cycleLength();
             var numberOfBuildings = $self.options.numberOfBuildings();
 
-            var inputs = $f.GetOutputPerSecond($self.recipe, $self.building, $f.GetSpeedMultiplier($self.module), $f.GetProductionMultiplier($self.module));
+            var inputs = $f.GetOutputPerSecond($self.recipe, $self.building.selected, $f.GetSpeedMultiplier($self.module), $f.GetProductionMultiplier($self.module));
             var size = 'col-sm-' + Math.round(12 / Object.keys(inputs).length);
             for (var k in inputs) {
                 result.push({
@@ -199,7 +206,7 @@ define(['knockout', 'text!./production-row.html', 'app/formulae', 'i18n'], funct
             }]
 
             //  observes
-            var building = $self.building();
+            var building = $self.building.selected();
 
             if (building) {
                 //  multipliers

@@ -1,4 +1,12 @@
 <div class="input-group" data-bind="attr:{ title:tooltip }">
+    <!-- ko if:hasOptions -->
+    <span class="input-group-btn">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"></button>
+        <div class="dropdown-menu" data-bind="foreach:optionsAvailable">
+          <span class="dropdown-item" data-bind="attr:{ value:id }, html: name, click:$parent.setOption.bind($parent)"></span>
+        </div>
+    </span>
+    <!-- /ko -->
     <span class="input-group-addon">
         <span class="factorio-icons" data-bind="css:getIconName()"></span>
         <!-- ko if:displayName -->
