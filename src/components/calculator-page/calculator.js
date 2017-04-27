@@ -2,6 +2,8 @@ define(['knockout', 'text!./calculator.html', 'data', /*pre-load*/ 'components/p
 
     function CalculatorViewModel(route) {
         var $self = this;
+        
+        $self.isV15 = !getQueryVariable('v');
 
         $self.calculateBuildings = ko.observable(true);
         $self.calculateCycle = ko.observable(true);
