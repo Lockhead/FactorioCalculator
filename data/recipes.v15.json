@@ -2117,5 +2117,150 @@
         "output": {
             "repair-pack": 1
         }
+    }, {
+        "id": "basic-oil-processing",
+        "time": 5,
+        "building": ["oil-refinery"],
+        "input": {
+            "crude-oil": 100
+        },
+        "output": {
+            "heavy-oil": 30,
+            "light-oil": 30,
+            "petroleum-gas": 40
+        }
+    }, {
+        "id": "advanced-oil-processing",
+        "time": 5,
+        "building": ["oil-refinery"],
+        "input": {
+            "water": 50,
+            "crude-oil": 100
+        },
+        "output": {
+            "heavy-oil": 10,
+            "light-oil": 45,
+            "petroleum-gas": 55
+        }
+    }, {
+        "id": "coal-liquefaction",
+        "time": 5,
+        "building": ["oil-refinery"],
+        "input": {
+            "coal": 10,
+            "heavy-oil": 25,
+            "water": 50
+        },
+        "output": {
+            "heavy-oil": 35,
+            "light-oil": 15,
+            "petroleum-gas": 20
+        }
+    }, {
+        "id": "heavy-oil-cracking",
+        "time": 3,
+        "building": ["chemical-plant"],
+        "input": {
+            "water": 30,
+            "heavy-oil": 40
+        },
+        "output": {
+            "light-oil": 30
+        }
+    }, {
+        "id": "light-oil-cracking",
+        "time": 3,
+        "building": ["chemical-plant"],
+        "input": {
+            "water": 30,
+            "light-oil": 30
+        },
+        "output": {
+            "petroleum-gas": 20
+        }
+    }, {
+        "id": "sulfuric-acid",
+        "time": 1,
+        "building": ["chemical-plant"],
+        "input": {
+            "sulfur": 5,
+            "iron-plate": 1,
+            "water": 10
+        },
+        "output": {
+            "sulfuric-acid": 50
+        }
+    }, {
+        "id": "plastic-bar",
+        "time": 1,
+        "building": ["chemical-plant"],
+        "input": {
+            "petroleum-gas": 20,
+            "coal": 1
+        },
+        "output": {
+            "plastic-bar": 2
+        }
+    }, {
+        "id": "solid-fuel-from-light-oil",
+        "time": 3,
+        "building": ["chemical-plant"],
+        "input": {
+            "light-oil": 10
+        },
+        "output": {
+            "solid-fuel": 1
+        }
+    }, {
+        "id": "solid-fuel-from-petroleum-gas",
+        "time": 3,
+        "building": ["chemical-plant"],
+        "input": {
+            "petroleum-gas": 20
+        },
+        "output": {
+            "solid-fuel": 1
+        }
+    }, {
+        "id": "solid-fuel-from-heavy-oil",
+        "time": 3,
+        "building": ["chemical-plant"],
+        "input": {
+            "heavy-oil": 20
+        },
+        "output": {
+            "solid-fuel": 1
+        }
+    }, {
+        "id": "sulfur",
+        "time": 1,
+        "building": ["chemical-plant"],
+        "input": {
+            "water": 30,
+            "petroleum-gas": 30
+        },
+        "output": {
+            "sulfur": 2
+        }
+    }, {
+        "id": "lubricant",
+        "time": 1,
+        "building": ["chemical-plant"],
+        "input": {
+            "heavy-oil": 10
+        },
+        "output": {
+            "lubricant": 10
+        }
+    }, {
+        "id": "empty-barrel",
+        "time": 1,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "steel-plate": 1
+        },
+        "output": {
+            "empty-barrel": 1
+        }
     }]
 }
