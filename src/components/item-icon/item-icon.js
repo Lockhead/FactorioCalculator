@@ -6,7 +6,7 @@ define(['knockout', 'text!./item-icon.html', 'i18n'], function(ko, template, $i)
         var id = typeof(params.id) === "function" ? params.id() : params.id;
         $self.id = ko.observable(id);
 
-        var name = ko.pureComputed(() => $i($self.id()));
+        var name = ko.pureComputed(() => $i($self.id())||id);
 
 
         $self.hasValue = !!params.value;

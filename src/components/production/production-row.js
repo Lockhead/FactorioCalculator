@@ -14,7 +14,7 @@ define(['knockout', 'text!./production-row.html', 'data', 'app/formulae', 'i18n'
         $self.module = params.module;
         $self.children = params.children;
         $self.inputProduction = {};
-        $self.header = $i(params.recipe.id);
+        $self.header = $i(params.recipe.id)||params.recipe.id;
         $self.supply = ko.observable();
 
         $self.options = {
