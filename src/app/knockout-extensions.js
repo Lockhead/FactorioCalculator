@@ -1,4 +1,4 @@
-define(['knockout', 'i18n'], function(ko, $i) {
+define(['knockout'], function(ko) {
 
     // source : https://github.com/knockout/knockout/issues/416
     ko.observableArray.fn.pushAll = function(valuesToPush) {
@@ -7,7 +7,8 @@ define(['knockout', 'i18n'], function(ko, $i) {
         ko.utils.arrayPushAll(underlyingArray, valuesToPush);
         this.valueHasMutated();
         return this; //optional
-    }
+    };
+
     ko.bindingHandlers.hidden = {
         update: function(element, valueAccessor) {
             ko.bindingHandlers.visible.update(element, function() {
@@ -15,4 +16,6 @@ define(['knockout', 'i18n'], function(ko, $i) {
             });
         }
     };
+    
+    return { loaded: true }
 });

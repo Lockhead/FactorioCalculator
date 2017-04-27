@@ -22,7 +22,14 @@ define(['knockout', 'jquery', 'app/LoadManager'], function(ko, $, Manager) {
     var Locales = new Manager(BASE_URL.replace('{0}', 'locales'), true);
     Locales.selected('en');
 
-    var Recipes = new Manager(BASE_URL.replace('{0}', 'recipes'), handleRecipeResult, 'i18n');
+    function getRecipeUrl() {
+        var version = getQueryVariable('v');
+        var url = 'recipes' + (version ? '' : '.v15');
+
+        return BASE_URL.replace('{0}', url);
+    }
+    
+    var Recipes = new Manager(getRecipeUrl(), handleRecipeResult, 'i18n');
     Recipes.getByOutput = function(id) {
         return this.mapOutput[id]
     }

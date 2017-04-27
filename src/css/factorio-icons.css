@@ -1,752 +1,248 @@
-.factorio-icons {
-   width: 16px;
-   height: 16px;
-   display: inline-block;
-   overflow: hidden;
-   background-repeat: no-repeat;
-   background-image: url(factorio-icons.png);
-}
-
-.factorio-accumulator {
-   background-position: -0px -0px
-}
-
-.factorio-advanced-circuit {
-   background-position: -16px -0px
-}
-
-.factorio-advanced-oil-processing {
-   background-position: -0px -16px
-}
-
-.factorio-alien-artifact {
-   background-position: -16px -16px
-}
-
-.factorio-alien-science-pack {
-   background-position: -0px -32px
-}
-
-.factorio-arithmetic-combinator {
-   background-position: -16px -32px
-}
-
-.factorio-assembling-machine-1 {
-   background-position: -0px -48px
-}
-
-.factorio-assembling-machine-2 {
-   background-position: -16px -48px
-}
-
-.factorio-assembling-machine-3 {
-   background-position: -0px -64px
-}
-
-.factorio-basic-oil-processing {
-   background-position: -16px -64px
-}
-
-.factorio-battery {
-   background-position: -0px -96px
-}
-
-.factorio-battery-equipment {
-   background-position: -0px -80px
-}
-
-.factorio-battery-mk2-equipment {
-   background-position: -16px -80px
-}
-
-.factorio-beacon {
-   background-position: -16px -96px
-}
-
-.factorio-big-electric-pole {
-   background-position: -0px -112px
-}
-
-.factorio-blueprint {
-   background-position: -0px -128px
-}
-
-.factorio-blueprint-book {
-   background-position: -16px -112px
-}
-
-.factorio-boiler {
-   background-position: -16px -128px
-}
-
-.factorio-burner-inserter {
-   background-position: -0px -144px
-}
-
-.factorio-burner-mining-drill {
-   background-position: -16px -144px
-}
-
-.factorio-cannon-shell {
-   background-position: -0px -160px
-}
-
-.factorio-car {
-   background-position: -16px -160px
-}
-
-.factorio-cargo-wagon {
-   background-position: -0px -176px
-}
-
-.factorio-chemical-plant {
-   background-position: -16px -176px
-}
-
-.factorio-cluster-grenade {
-   background-position: -0px -192px
-}
-
-.factorio-coal {
-   background-position: -0px -208px
-}
-
-.factorio-coal-dark-background {
-   background-position: -16px -192px
-}
-
-.factorio-combat-shotgun {
-   background-position: -16px -208px
-}
-
-.factorio-concrete {
-   background-position: -0px -224px
-}
-
-.factorio-constant-combinator {
-   background-position: -16px -224px
-}
-
-.factorio-construction-robot {
-   background-position: -0px -240px
-}
-
-.factorio-copper-cable {
-   background-position: -16px -240px
-}
-
-.factorio-copper-ore {
-   background-position: -0px -256px
-}
-
-.factorio-copper-plate {
-   background-position: -16px -256px
-}
-
-.factorio-crude-oil {
-   background-position: -16px -272px
-}
-
-.factorio-crude-oil-barrel {
-   background-position: -0px -272px
-}
-
-.factorio-curved-rail {
-   background-position: -0px -288px
-}
-
-.factorio-decider-combinator {
-   background-position: -16px -288px
-}
-
-.factorio-deconstruction-planner {
-   background-position: -0px -304px
-}
-
-.factorio-defender-capsule {
-   background-position: -16px -304px
-}
-
-.factorio-destroyer-capsule {
-   background-position: -0px -320px
-}
-
-.factorio-diesel-locomotive {
-   background-position: -16px -320px
-}
-
-.factorio-discharge-defense-equipment {
-   background-position: -0px -336px
-}
-
-.factorio-distractor-capsule {
-   background-position: -16px -336px
-}
-
-.factorio-effectivity-module {
-   background-position: -0px -368px
-}
-
-.factorio-effectivity-module-2 {
-   background-position: -0px -352px
-}
-
-.factorio-effectivity-module-3 {
-   background-position: -16px -352px
-}
-
-.factorio-electric-engine-unit {
-   background-position: -16px -368px
-}
-
-.factorio-electric-furnace {
-   background-position: -0px -384px
-}
-
-.factorio-electric-mining-drill {
-   background-position: -16px -384px
-}
-
-.factorio-electronic-circuit {
-   background-position: -0px -400px
-}
-
-.factorio-empty-barrel {
-   background-position: -16px -400px
-}
-
-.factorio-empty-crude-oil-barrel {
-   background-position: -0px -416px
-}
-
-.factorio-energy-shield-equipment {
-   background-position: -16px -416px
-}
-
-.factorio-energy-shield-mk2-equipment {
-   background-position: -0px -432px
-}
-
-.factorio-engine-unit {
-   background-position: -16px -432px
-}
-
-.factorio-exoskeleton-equipment {
-   background-position: -0px -448px
-}
-
-.factorio-explosive-cannon-shell {
-   background-position: -16px -448px
-}
-
-.factorio-explosive-rocket {
-   background-position: -0px -464px
-}
-
-.factorio-explosives {
-   background-position: -16px -464px
-}
-
-.factorio-express-splitter {
-   background-position: -0px -480px
-}
-
-.factorio-express-transport-belt {
-   background-position: -16px -480px
-}
-
-.factorio-express-underground-belt {
-   background-position: -0px -496px
-}
-
-.factorio-fast-inserter {
-   background-position: -16px -496px
-}
-
-.factorio-fast-splitter {
-   background-position: -0px -512px
-}
-
-.factorio-fast-transport-belt {
-   background-position: -16px -512px
-}
-
-.factorio-fast-underground-belt {
-   background-position: -0px -528px
-}
-
-.factorio-fill-crude-oil-barrel {
-   background-position: -16px -528px
-}
-
-.factorio-filter-inserter {
-   background-position: -0px -544px
-}
-
-.factorio-firearm-magazine {
-   background-position: -16px -544px
-}
-
-.factorio-fish {
-   background-position: -0px -560px
-}
-
-.factorio-flame-thrower {
-   background-position: -0px -576px
-}
-
-.factorio-flame-thrower-ammo {
-   background-position: -16px -560px
-}
-
-.factorio-flamethrower-turret {
-   background-position: -16px -576px
-}
-
-.factorio-flying-robot-frame {
-   background-position: -0px -592px
-}
-
-.factorio-fusion-reactor-equipment {
-   background-position: -16px -592px
-}
-
-.factorio-gate {
-   background-position: -0px -608px
-}
-
-.factorio-green-wire {
-   background-position: -16px -608px
-}
-
-.factorio-grenade {
-   background-position: -0px -624px
-}
-
-.factorio-gun-turret {
-   background-position: -16px -624px
-}
-
-.factorio-hazard-concrete {
-   background-position: -0px -640px
-}
-
-.factorio-heavy-armor {
-   background-position: -16px -640px
-}
-
-.factorio-heavy-oil {
-   background-position: -16px -656px
-}
-
-.factorio-heavy-oil-cracking {
-   background-position: -0px -656px
-}
-
-.factorio-inserter {
-   background-position: -0px -672px
-}
-
-.factorio-iron-axe {
-   background-position: -16px -672px
-}
-
-.factorio-iron-chest {
-   background-position: -0px -688px
-}
-
-.factorio-iron-gear-wheel {
-   background-position: -16px -688px
-}
-
-.factorio-iron-ore {
-   background-position: -0px -704px
-}
-
-.factorio-iron-plate {
-   background-position: -16px -704px
-}
-
-.factorio-iron-stick {
-   background-position: -0px -720px
-}
-
-.factorio-lab {
-   background-position: -16px -720px
-}
-
-.factorio-land-mine {
-   background-position: -0px -736px
-}
-
-.factorio-landfill {
-   background-position: -16px -736px
-}
-
-.factorio-laser-turret {
-   background-position: -0px -752px
-}
-
-.factorio-light-armor {
-   background-position: -16px -752px
-}
-
-.factorio-light-oil {
-   background-position: -16px -768px
-}
-
-.factorio-light-oil-cracking {
-   background-position: -0px -768px
-}
-
-.factorio-logistic-chest-active-provider {
-   background-position: -0px -784px
-}
-
-.factorio-logistic-chest-passive-provider {
-   background-position: -16px -784px
-}
-
-.factorio-logistic-chest-requester {
-   background-position: -0px -800px
-}
-
-.factorio-logistic-chest-storage {
-   background-position: -16px -800px
-}
-
-.factorio-logistic-robot {
-   background-position: -0px -816px
-}
-
-.factorio-long-handed-inserter {
-   background-position: -16px -816px
-}
-
-.factorio-lubricant {
-   background-position: -0px -832px
-}
-
-.factorio-medium-electric-pole {
-   background-position: -16px -832px
-}
-
-.factorio-modular-armor {
-   background-position: -0px -848px
-}
-
-.factorio-night-vision-equipment {
-   background-position: -16px -848px
-}
-
-.factorio-offshore-pump {
-   background-position: -0px -864px
-}
-
-.factorio-oil-refinery {
-   background-position: -16px -864px
-}
-
-.factorio-personal-laser-defense-equipment {
-   background-position: -0px -880px
-}
-
-.factorio-personal-roboport-equipment {
-   background-position: -16px -880px
-}
-
-.factorio-petroleum-gas {
-   background-position: -0px -896px
-}
-
-.factorio-piercing-rounds-magazine {
-   background-position: -16px -896px
-}
-
-.factorio-piercing-shotgun-shell {
-   background-position: -0px -912px
-}
-
-.factorio-pipe {
-   background-position: -0px -928px
-}
-
-.factorio-pipe-to-ground {
-   background-position: -16px -912px
-}
-
-.factorio-pistol {
-   background-position: -16px -928px
-}
-
-.factorio-plastic-bar {
-   background-position: -0px -944px
-}
-
-.factorio-poison-capsule {
-   background-position: -16px -944px
-}
-
-.factorio-power-armor {
-   background-position: -16px -960px
-}
-
-.factorio-power-armor-mk2 {
-   background-position: -0px -960px
-}
-
-.factorio-power-switch {
-   background-position: -0px -976px
-}
-
-.factorio-processing-unit {
-   background-position: -16px -976px
-}
-
-.factorio-productivity-module {
-   background-position: -0px -1008px
-}
-
-.factorio-productivity-module-2 {
-   background-position: -0px -992px
-}
-
-.factorio-productivity-module-3 {
-   background-position: -16px -992px
-}
-
-.factorio-pumpjack {
-   background-position: -16px -1008px
-}
-
-.factorio-radar {
-   background-position: -0px -1024px
-}
-
-.factorio-rail {
-   background-position: -16px -1040px
-}
-
-.factorio-rail-chain-signal {
-   background-position: -16px -1024px
-}
-
-.factorio-rail-signal {
-   background-position: -0px -1040px
-}
-
-.factorio-raw-wood {
-   background-position: -0px -1056px
-}
-
-.factorio-red-wire {
-   background-position: -16px -1056px
-}
-
-.factorio-repair-pack {
-   background-position: -0px -1072px
-}
-
-.factorio-roboport {
-   background-position: -16px -1072px
-}
-
-.factorio-rocket {
-   background-position: -0px -1136px
-}
-
-.factorio-rocket-control-unit {
-   background-position: -0px -1088px
-}
-
-.factorio-rocket-fuel {
-   background-position: -16px -1088px
-}
-
-.factorio-rocket-launcher {
-   background-position: -0px -1104px
-}
-
-.factorio-rocket-part {
-   background-position: -16px -1104px
-}
-
-.factorio-rocket-silo {
-   background-position: -0px -1120px
-}
-
-.factorio-low-density-structure {
-   background-position: -16px -1120px
-}
-
-.factorio-satellite {
-   background-position: -16px -1136px
-}
-
-.factorio-science-pack-1 {
-   background-position: -0px -1152px
-}
-
-.factorio-science-pack-2 {
-   background-position: -16px -1152px
-}
-
-.factorio-science-pack-3 {
-   background-position: -0px -1168px
-}
-
-.factorio-shotgun {
-   background-position: -0px -1184px
-}
-
-.factorio-shotgun-shell {
-   background-position: -16px -1168px
-}
-
-.factorio-slowdown-capsule {
-   background-position: -16px -1184px
-}
-
-.factorio-small-electric-pole {
-   background-position: -0px -1200px
-}
-
-.factorio-small-lamp {
-   background-position: -16px -1200px
-}
-
-.factorio-small-pump {
-   background-position: -0px -1216px
-}
-
-.factorio-solar-panel {
-   background-position: -0px -1232px
-}
-
-.factorio-solar-panel-equipment {
-   background-position: -16px -1216px
-}
-
-.factorio-solid-fuel {
-   background-position: -0px -1264px
-}
-
-.factorio-solid-fuel-from-heavy-oil {
-   background-position: -16px -1232px
-}
-
-.factorio-solid-fuel-from-light-oil {
-   background-position: -0px -1248px
-}
-
-.factorio-solid-fuel-from-petroleum-gas {
-   background-position: -16px -1248px
-}
-
-.factorio-speed-module {
-   background-position: -16px -1280px
-}
-
-.factorio-speed-module-2 {
-   background-position: -16px -1264px
-}
-
-.factorio-speed-module-3 {
-   background-position: -0px -1280px
-}
-
-.factorio-splitter {
-   background-position: -0px -1296px
-}
-
-.factorio-stack-filter-inserter {
-   background-position: -16px -1296px
-}
-
-.factorio-stack-inserter {
-   background-position: -0px -1312px
-}
-
-.factorio-steam-engine {
-   background-position: -16px -1312px
-}
-
-.factorio-steel-axe {
-   background-position: -0px -1328px
-}
-
-.factorio-steel-chest {
-   background-position: -16px -1328px
-}
-
-.factorio-steel-furnace {
-   background-position: -0px -1344px
-}
-
-.factorio-steel-plate {
-   background-position: -16px -1344px
-}
-
-.factorio-stone {
-   background-position: -16px -1376px
-}
-
-.factorio-stone-brick {
-   background-position: -0px -1360px
-}
-
-.factorio-stone-furnace {
-   background-position: -16px -1360px
-}
-
-.factorio-stone-wall {
-   background-position: -0px -1376px
-}
-
-.factorio-storage-tank {
-   background-position: -0px -1392px
-}
-
-.factorio-submachine-gun {
-   background-position: -16px -1392px
-}
-
-.factorio-substation {
-   background-position: -0px -1408px
-}
-
-.factorio-sulfur {
-   background-position: -16px -1408px
-}
-
-.factorio-sulfuric-acid {
-   background-position: -0px -1424px
-}
-
-.factorio-tank {
-   background-position: -16px -1424px
-}
-
-.factorio-train-stop {
-   background-position: -0px -1440px
-}
-
-.factorio-transport-belt {
-   background-position: -16px -1440px
-}
-
-.factorio-underground-belt {
-   background-position: -0px -1456px
-}
-
-.factorio-water {
-   background-position: -16px -1456px
-}
-
-.factorio-wood {
-   background-position: -0px -1472px
-}
-
-.factorio-wooden-chest {
-   background-position: -16px -1472px
-}
+/* ----------------------------------------------------
+   created with http://www.codeandweb.com/texturepacker 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:775d9743245856e56b53261caf5277aa:903f0f4aad6811e12e37619cfccb489b:a80c321e5c517750dfaa3faf843de252$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.factorio-icons {width:16px; height:16px; display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(factorio-icons.png);}
+
+.factorio-accumulator {background-position: -16px -1217px}
+.factorio-advanced-circuit {background-position: -0px -1233px}
+.factorio-advanced-oil-processing {background-position: -0px -1249px}
+.factorio-alien-artifact-goo {background-position: -16px -1265px}
+.factorio-arithmetic-combinator {background-position: -16px -1249px}
+.factorio-assembling-machine-1 {background-position: -0px -1265px}
+.factorio-assembling-machine-2 {background-position: -16px -1233px}
+.factorio-assembling-machine-3 {background-position: -0px -1217px}
+.factorio-atomic-bomb {background-position: -0px -1169px}
+.factorio-barrel-empty {background-position: -16px -1185px}
+.factorio-barrel-empty-side-mask {background-position: -0px -1185px}
+.factorio-barrel-empty-top-mask {background-position: -16px -1201px}
+.factorio-barrel-fill {background-position: -0px -1297px}
+.factorio-barrel-fill-side-mask {background-position: -0px -1201px}
+.factorio-barrel-fill-top-mask {background-position: -0px -1281px}
+.factorio-barrel-hoop-top-mask {background-position: -0px -1345px}
+.factorio-barrel-side-mask {background-position: -16px -1345px}
+.factorio-basic-oil-processing {background-position: -16px -1361px}
+.factorio-battery {background-position: -16px -1377px}
+.factorio-battery-equipment {background-position: -0px -1393px}
+.factorio-battery-mk2-equipment {background-position: -0px -1377px}
+.factorio-beacon {background-position: -0px -1361px}
+.factorio-belt-immunity-equipment {background-position: -16px -1329px}
+.factorio-big-electric-pole {background-position: -16px -1281px}
+.factorio-blueprint {background-position: -0px -1329px}
+.factorio-blueprint-book {background-position: -16px -1297px}
+.factorio-boiler {background-position: -0px -1313px}
+.factorio-burner-inserter {background-position: -16px -1313px}
+.factorio-burner-mining-drill {background-position: -16px -1169px}
+.factorio-cannon-shell {background-position: -16px -1153px}
+.factorio-car {background-position: -0px -993px}
+.factorio-cargo-wagon {background-position: -0px -1009px}
+.factorio-centrifuge {background-position: -16px -1025px}
+.factorio-chemical-plant {background-position: -16px -1009px}
+.factorio-cluster-grenade {background-position: -0px -1025px}
+.factorio-coal {background-position: -16px -929px}
+.factorio-coal-dark-background {background-position: -16px -993px}
+.factorio-coal-liquefaction {background-position: -16px -977px}
+.factorio-combat-shotgun {background-position: -16px -945px}
+.factorio-computer {background-position: -0px -977px}
+.factorio-concrete {background-position: -0px -961px}
+.factorio-constant-combinator {background-position: -16px -961px}
+.factorio-construction-robot {background-position: -0px -1041px}
+.factorio-copper-cable {background-position: -0px -1057px}
+.factorio-copper-ore {background-position: -0px -1105px}
+.factorio-copper-plate {background-position: -16px -1105px}
+.factorio-crude-oil {background-position: -16px -1121px}
+.factorio-curved-rail {background-position: -0px -1153px}
+.factorio-decider-combinator {background-position: -0px -1137px}
+.factorio-deconstruction-planner {background-position: -16px -1137px}
+.factorio-defender {background-position: -16px -1089px}
+.factorio-defender-capsule {background-position: -0px -1121px}
+.factorio-destroyer {background-position: -16px -1057px}
+.factorio-destroyer-capsule {background-position: -16px -1041px}
+.factorio-diesel-locomotive {background-position: -0px -1089px}
+.factorio-discharge-defense-equipment {background-position: -0px -1073px}
+.factorio-distractor {background-position: -16px -1393px}
+.factorio-distractor-capsule {background-position: -16px -1073px}
+.factorio-dry-hairy-tree {background-position: -16px -1457px}
+.factorio-effectivity-module {background-position: -0px -1713px}
+.factorio-effectivity-module-2 {background-position: -16px -1681px}
+.factorio-effectivity-module-3 {background-position: -0px -1697px}
+.factorio-electric-engine-unit {background-position: -16px -1729px}
+.factorio-electric-furnace {background-position: -16px -1713px}
+.factorio-electric-mining-drill {background-position: -0px -1729px}
+.factorio-electronic-circuit {background-position: -16px -1697px}
+.factorio-empty-barrel {background-position: -0px -1681px}
+.factorio-energy-shield-equipment {background-position: -0px -1633px}
+.factorio-energy-shield-mk2-equipment {background-position: -0px -1649px}
+.factorio-engine-unit {background-position: -16px -1665px}
+.factorio-exoskeleton-equipment {background-position: -16px -1649px}
+.factorio-explosive-cannon-shell {background-position: -0px -1745px}
+.factorio-explosive-rocket {background-position: -16px -1633px}
+.factorio-explosive-uranium-cannon-shell {background-position: -0px -1761px}
+.factorio-explosives {background-position: -0px -1809px}
+.factorio-express-loader {background-position: -16px -1809px}
+.factorio-express-splitter {background-position: -16px -1825px}
+.factorio-express-transport-belt {background-position: -16px -1841px}
+.factorio-express-underground-belt {background-position: -0px -1841px}
+.factorio-fast-inserter {background-position: -0px -1825px}
+.factorio-fast-loader {background-position: -16px -1793px}
+.factorio-fast-splitter {background-position: -16px -1745px}
+.factorio-fast-transport-belt {background-position: -16px -1761px}
+.factorio-fast-underground-belt {background-position: -0px -1793px}
+.factorio-filter-inserter {background-position: -0px -1777px}
+.factorio-firearm-magazine {background-position: -16px -1777px}
+.factorio-fish {background-position: -0px -1665px}
+.factorio-flamethrower {background-position: -16px -1473px}
+.factorio-flamethrower-ammo {background-position: -16px -1409px}
+.factorio-flamethrower-turret {background-position: -16px -1617px}
+.factorio-fluid-wagon {background-position: -0px -1505px}
+.factorio-flying-robot-frame {width:19px; height:17px; background-position: -0px -1873px}
+.factorio-fusion-reactor-equipment {background-position: -0px -1489px}
+.factorio-gate {background-position: -16px -1489px}
+.factorio-green-wire {background-position: -0px -1473px}
+.factorio-grenade {background-position: -0px -1457px}
+.factorio-gun-turret {background-position: -0px -1409px}
+.factorio-hazard-concrete {background-position: -0px -1425px}
+.factorio-heat-boiler {background-position: -16px -1441px}
+.factorio-heat-pipe {background-position: -16px -1425px}
+.factorio-heavy-armor {background-position: -0px -1441px}
+.factorio-heavy-oil {background-position: -16px -1521px}
+.factorio-heavy-oil-cracking {background-position: -16px -1505px}
+.factorio-high-tech-science-pack {background-position: -16px -1569px}
+.factorio-inserter {background-position: -16px -1585px}
+.factorio-iron-axe {background-position: -0px -1617px}
+.factorio-iron-chest {width:17px; height:16px; background-position: -0px -1857px}
+.factorio-iron-gear-wheel {background-position: -0px -1601px}
+.factorio-iron-ore {background-position: -16px -1601px}
+.factorio-iron-plate {background-position: -0px -1585px}
+.factorio-iron-stick {background-position: -0px -1569px}
+.factorio-kovarex-enrichment-process {background-position: -0px -1521px}
+.factorio-lab {background-position: -0px -1537px}
+.factorio-land-mine {background-position: -16px -1553px}
+.factorio-landfill {background-position: -16px -1537px}
+.factorio-laser-turret {background-position: -0px -1553px}
+.factorio-light-armor {background-position: -0px -945px}
+.factorio-light-oil {background-position: -0px -289px}
+.factorio-light-oil-cracking {background-position: -0px -929px}
+.factorio-loader {background-position: -0px -305px}
+.factorio-logistic-chest-active-provider {background-position: -16px -321px}
+.factorio-logistic-chest-passive-provider {background-position: -16px -305px}
+.factorio-logistic-chest-requester {background-position: -0px -321px}
+.factorio-logistic-chest-storage {background-position: -16px -289px}
+.factorio-logistic-robot {background-position: -16px -273px}
+.factorio-long-handed-inserter {background-position: -16px -225px}
+.factorio-lubricant {background-position: -16px -241px}
+.factorio-market {background-position: -0px -273px}
+.factorio-medium-biter {background-position: -16px -257px}
+.factorio-medium-biter-corpse {background-position: -0px -257px}
+.factorio-medium-electric-pole {background-position: -0px -337px}
+.factorio-medium-spitter {background-position: -0px -353px}
+.factorio-medium-worm {background-position: -16px -401px}
+.factorio-medium-worm-corpse {background-position: -0px -401px}
+.factorio-military-science-pack {background-position: -16px -417px}
+.factorio-modular-armor {background-position: -0px -449px}
+.factorio-night-vision-equipment {background-position: -0px -433px}
+.factorio-nuclear-fuel-reprocessing {background-position: -16px -433px}
+.factorio-nuclear-reactor {background-position: -0px -417px}
+.factorio-offshore-pump {background-position: -16px -385px}
+.factorio-oil-refinery {background-position: -16px -337px}
+.factorio-personal-laser-defense-equipment {background-position: -16px -353px}
+.factorio-personal-roboport-equipment {background-position: -0px -385px}
+.factorio-personal-roboport-mk2-equipment {background-position: -0px -369px}
+.factorio-petroleum-gas {background-position: -16px -369px}
+.factorio-piercing-rounds-magazine {background-position: -0px -241px}
+.factorio-piercing-shotgun-shell {background-position: -0px -225px}
+.factorio-pipe {background-position: -16px -65px}
+.factorio-pipe-to-ground {background-position: -16px -49px}
+.factorio-pistol {background-position: -0px -97px}
+.factorio-plastic-bar {background-position: -0px -81px}
+.factorio-poison-capsule {background-position: -16px -81px}
+.factorio-power-armor {background-position: -0px -49px}
+.factorio-power-armor-mk2 {background-position: -0px -65px}
+.factorio-power-switch {background-position: -0px -0px}
+.factorio-processing-unit {background-position: -0px -17px}
+.factorio-production-science-pack {background-position: -16px -33px}
+.factorio-productivity-module {background-position: -16px -97px}
+.factorio-productivity-module-2 {background-position: -16px -17px}
+.factorio-productivity-module-3 {background-position: -0px -33px}
+.factorio-programmable-speaker {background-position: -16px -113px}
+.factorio-pump {background-position: -16px -161px}
+.factorio-pumpjack {background-position: -0px -177px}
+.factorio-radar {background-position: -0px -193px}
+.factorio-rail {background-position: -0px -209px}
+.factorio-rail-chain-signal {background-position: -16px -209px}
+.factorio-rail-signal {background-position: -16px -193px}
+.factorio-railgun {background-position: -0px -161px}
+.factorio-railgun-ammo {background-position: -16px -177px}
+.factorio-raw-wood {background-position: -0px -113px}
+.factorio-red-wire {background-position: -0px -129px}
+.factorio-repair-pack {background-position: -16px -145px}
+.factorio-roboport {background-position: -16px -129px}
+.factorio-rocket {background-position: -0px -801px}
+.factorio-rocket-control-unit {background-position: -0px -145px}
+.factorio-rocket-fuel {background-position: -16px -449px}
+.factorio-rocket-launcher {background-position: -16px -465px}
+.factorio-rocket-part {background-position: -0px -753px}
+.factorio-rocket-silo {background-position: -16px -753px}
+.factorio-rocket-structure {background-position: -16px -769px}
+.factorio-satellite {background-position: -0px -785px}
+.factorio-science-pack-1 {background-position: -16px -785px}
+.factorio-science-pack-2 {background-position: -0px -769px}
+.factorio-science-pack-3 {background-position: -16px -737px}
+.factorio-shotgun {background-position: -16px -705px}
+.factorio-shotgun-shell {background-position: -16px -689px}
+.factorio-slowdown-capsule {background-position: -0px -737px}
+.factorio-small-electric-pole {background-position: -0px -721px}
+.factorio-small-lamp {background-position: -16px -721px}
+.factorio-solar-panel {background-position: -16px -817px}
+.factorio-solar-panel-equipment {background-position: -16px -801px}
+.factorio-solid-fuel {background-position: -16px -913px}
+.factorio-solid-fuel-from-heavy-oil {background-position: -16px -865px}
+.factorio-solid-fuel-from-light-oil {background-position: -0px -881px}
+.factorio-solid-fuel-from-petroleum-gas {background-position: -0px -897px}
+.factorio-space-science-pack {background-position: -16px -897px}
+.factorio-speed-module {background-position: -0px -865px}
+.factorio-speed-module-2 {background-position: -0px -913px}
+.factorio-speed-module-3 {background-position: -16px -881px}
+.factorio-splitter {background-position: -0px -817px}
+.factorio-stack-filter-inserter {background-position: -0px -833px}
+.factorio-stack-inserter {background-position: -16px -849px}
+.factorio-steam {background-position: -0px -705px}
+.factorio-steam-engine {background-position: -16px -833px}
+.factorio-steam-turbine {background-position: -0px -849px}
+.factorio-steel-axe {background-position: -0px -689px}
+.factorio-steel-chest {background-position: -16px -513px}
+.factorio-steel-furnace {background-position: -16px -529px}
+.factorio-steel-plate {background-position: -0px -561px}
+.factorio-stone {background-position: -0px -513px}
+.factorio-stone-brick {background-position: -0px -545px}
+.factorio-stone-furnace {background-position: -16px -545px}
+.factorio-stone-wall {background-position: -0px -529px}
+.factorio-storage-tank {background-position: -0px -465px}
+.factorio-submachine-gun {background-position: -0px -481px}
+.factorio-substation {background-position: -16px -497px}
+.factorio-sulfur {background-position: -16px -481px}
+.factorio-sulfuric-acid {background-position: -0px -497px}
+.factorio-tank {background-position: -16px -577px}
+.factorio-tank-cannon {background-position: -16px -561px}
+.factorio-train-stop {background-position: -16px -625px}
+.factorio-transport-belt {background-position: -0px -641px}
+.factorio-underground-belt {background-position: -0px -657px}
+.factorio-uranium-235 {background-position: -16px -673px}
+.factorio-uranium-238 {background-position: -16px -657px}
+.factorio-uranium-cannon-shell {background-position: -0px -673px}
+.factorio-uranium-fuel-cell {background-position: -16px -641px}
+.factorio-uranium-ore {background-position: -0px -625px}
+.factorio-uranium-processing {background-position: -0px -577px}
+.factorio-uranium-rounds-magazine {background-position: -0px -593px}
+.factorio-used-up-uranium-fuel-cell {background-position: -16px -609px}
+.factorio-water {background-position: -16px -593px}
+.factorio-wood {background-position: -0px -609px}
+.factorio-wooden-chest {width:16px; height:17px; background-position: -16px -0px}
