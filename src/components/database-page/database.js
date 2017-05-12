@@ -1,8 +1,21 @@
-define(['knockout', 'text!./database.html', 'jquery'], function(ko, template, $) {
+define(['knockout', 'text!./database.html', 'jquery',
+    'text!/data/raw/recipes/ammo.lua', 'text!/data/raw/recipes/capsule.lua', 'text!/data/raw/recipes/demo-furnace-recipe.lua',
+    'text!/data/raw/recipes/demo-recipe.lua', 'text!/data/raw/recipes/demo-turret.lua', 'text!/data/raw/recipes/equipment.lua',
+    'text!/data/raw/recipes/fluid-recipe.lua', 'text!/data/raw/recipes/furnace-recipe.lua', 'text!/data/raw/recipes/inserter.lua',
+    'text!/data/raw/recipes/module.lua', 'text!/data/raw/recipes/recipe.lua', 'text!/data/raw/recipes/turret.lua'
+], function(ko, template, $) {
 
+    var luaFiles = Array.prototype.slice.apply(arguments, [3]);
+        
     function DatabaseViewModel(route) {
         this.file_content = ko.observable();
         this.collection = ko.observable();
+
+        for (var fileIndex in luaFiles) {
+            var file = luaFiles[fileIndex];
+            this.parseData(file);
+        }
+        debugger;
     }
 
     function luaToJson(lua) {
@@ -16,25 +29,24 @@ define(['knockout', 'text!./database.html', 'jquery'], function(ko, template, $)
         lua = lua.replace(/\s--\s\[\d+\](\n)/g, '$1'); // remove comment
         lua = lua.replace(/[\s\t\r\n]/g, ''); // remove tabs & returns
         lua = lua.replace(/\,(\})/g, '$1'); // remove trailing comma
-        lua = lua.replace(/,"requester_paste_multiplier":\d*/g, ''); 
+        lua = lua.replace(/,"requester_paste_multiplier":\d*/g, '');
         lua = lua.replace(/([\,\{\[])(\w*)=/g, '$1"$2":'); // change equal to semicolon and add quotes to properties
-        lua = lua.replace(/^data:extend\({/, '[');//  remove function notation
+        lua = lua.replace(/^data:extend\({/, '['); //  remove function notation
         lua = lua.replace(/}\)$/, ']') //  remove function notation
-        lua = lua.replace(/{{/g,'[{').replace(/(\d)}}/g, '$1}]'); //  change dictionaries to arrays
-        lua = lua.replace(/"\,(\d+)/gi, "\":$1");
-        ;
+        lua = lua.replace(/{{/g, '[{').replace(/(\d)}}/g, '$1}]'); //  change dictionaries to arrays
+        lua = lua.replace(/"\,(\d+)/gi, "\":$1");;
         console.log(lua);
         return JSON.parse(lua);
     }
-    
+
     var building_map = {
         'crafting': ['assembling-machine-3', 'assembling-machine-2', 'assembling-machine-1'],
         'chemistry': ['chemical-plant'],
         'oil-processing': ['oil-refinery'],
         'smelting': ['electric-furnace', 'steel-furnace', 'stone-furnace']
     }
-    DatabaseViewModel.prototype.parseData = function() {
-        var text = luaToJson(this.file_content());
+    DatabaseViewModel.prototype.parseData = function(file) {
+        var text = luaToJson(file || this.file_content());
         var data = eval(text);
 
         var result = [];
@@ -63,7 +75,7 @@ define(['knockout', 'text!./database.html', 'jquery'], function(ko, template, $)
         var index = 0;
         var item = {};
         var length = 0;
-        
+
         //  static single ingredient with amount in sibling property (sent through parameter)
         if (typeof(ingredients) === "string") {
             result[ingredients] = item_count || 1;

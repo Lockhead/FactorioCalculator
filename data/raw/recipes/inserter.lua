@@ -10,8 +10,7 @@ data:extend(
       {"iron-plate", 1},
       {"inserter", 1}
     },
-    result = "long-handed-inserter",
-    requester_paste_multiplier = 4
+    result = "long-handed-inserter"
   },
   {
     type = "recipe",
@@ -23,8 +22,7 @@ data:extend(
       {"iron-plate", 2},
       {"inserter", 1}
     },
-    result = "fast-inserter",
-    requester_paste_multiplier = 4
+    result = "fast-inserter"
   },
   {
     type = "recipe",
@@ -35,8 +33,7 @@ data:extend(
       {"fast-inserter", 1},
       {"electronic-circuit", 4}
     },
-    result = "filter-inserter",
-    requester_paste_multiplier = 4
+    result = "filter-inserter"
   },
   {
     type = "recipe",
@@ -49,8 +46,7 @@ data:extend(
       {"advanced-circuit", 1},
       {"fast-inserter", 1}
     },
-    result = "stack-inserter",
-    requester_paste_multiplier = 4
+    result = "stack-inserter"
   },
   {
     type = "recipe",
@@ -61,8 +57,7 @@ data:extend(
       {"stack-inserter", 1},
       {"electronic-circuit", 5}
     },
-    result = "stack-filter-inserter",
-    requester_paste_multiplier = 4
+    result = "stack-filter-inserter"
   }
 }
 )

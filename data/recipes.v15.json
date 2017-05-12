@@ -1,39 +1,7 @@
 {
-    "file_version": 2.0,
-    "game_version": 0.15,
+    "file_version": 1.0,
+    "game_version": 0.13,
     "data": [{
-        "id": "iron-ore",
-        "time": 2,
-        "building": ["electric-mining-drill", "burner-mining-drill"],
-        "input": {},
-        "output": {
-            "iron-ore": 0.9
-        }
-    }, {
-        "id": "copper-ore",
-        "time": 2,
-        "building": ["electric-mining-drill", "burner-mining-drill"],
-        "input": {},
-        "output": {
-            "copper-ore": 0.9
-        }
-    }, {
-        "id": "coal",
-        "time": 2,
-        "building": ["electric-mining-drill", "burner-mining-drill"],
-        "input": {},
-        "output": {
-            "coal": 0.9
-        }
-    }, {
-        "id": "stone",
-        "time": 2,
-        "building": ["electric-mining-drill", "burner-mining-drill"],
-        "input": {},
-        "output": {
-            "stone": 0.4
-        }
-    }, {
         "id": "piercing-rounds-magazine",
         "time": 3,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
@@ -266,13 +234,352 @@
         }
     }, {
         "id": "discharge-defense-remote",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "electronic-circuit": 1
         },
         "output": {
             "discharge-defense-remote": 1
+        }
+    }, {
+        "id": "copper-plate",
+        "time": 3,
+        "building": ["electric-furnace", "steel-furnace", "stone-furnace"],
+        "input": {
+            "copper-ore": 1
+        },
+        "output": {
+            "copper-plate": 1
+        }
+    }, {
+        "id": "iron-plate",
+        "time": 3,
+        "building": ["electric-furnace", "steel-furnace", "stone-furnace"],
+        "input": {
+            "iron-ore": 1
+        },
+        "output": {
+            "iron-plate": 1
+        }
+    }, {
+        "id": "stone-brick",
+        "time": 3,
+        "building": ["electric-furnace", "steel-furnace", "stone-furnace"],
+        "input": {
+            "stone": 2
+        },
+        "output": {
+            "stone-brick": 1
+        }
+    }, {
+        "id": "wood",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "raw-wood": 1
+        },
+        "output": {
+            "wood": 2
+        }
+    }, {
+        "id": "wooden-chest",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "wood": 4
+        },
+        "output": {
+            "wooden-chest": 1
+        }
+    }, {
+        "id": "iron-stick",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "iron-plate": 1
+        },
+        "output": {
+            "iron-stick": 2
+        }
+    }, {
+        "id": "iron-axe",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "iron-stick": 2,
+            "iron-plate": 3
+        },
+        "output": {
+            "iron-axe": 1
+        }
+    }, {
+        "id": "stone-furnace",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "stone": 5
+        },
+        "output": {
+            "stone-furnace": 1
+        }
+    }, {
+        "id": "boiler",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "stone-furnace": 1,
+            "pipe": 4
+        },
+        "output": {
+            "boiler": 1
+        }
+    }, {
+        "id": "steam-engine",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "iron-gear-wheel": 8,
+            "pipe": 5,
+            "iron-plate": 10
+        },
+        "output": {
+            "steam-engine": 1
+        }
+    }, {
+        "id": "iron-gear-wheel",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "iron-plate": 2
+        },
+        "output": {
+            "iron-gear-wheel": 1
+        }
+    }, {
+        "id": "electronic-circuit",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "iron-plate": 1,
+            "copper-cable": 3
+        },
+        "output": {
+            "electronic-circuit": 1
+        }
+    }, {
+        "id": "transport-belt",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "iron-plate": 1,
+            "iron-gear-wheel": 1
+        },
+        "output": {
+            "transport-belt": 2
+        }
+    }, {
+        "id": "electric-mining-drill",
+        "time": 2,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "electronic-circuit": 3,
+            "iron-gear-wheel": 5,
+            "iron-plate": 10
+        },
+        "output": {
+            "electric-mining-drill": 1
+        }
+    }, {
+        "id": "burner-mining-drill",
+        "time": 2,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "iron-gear-wheel": 3,
+            "stone-furnace": 1,
+            "iron-plate": 3
+        },
+        "output": {
+            "burner-mining-drill": 1
+        }
+    }, {
+        "id": "inserter",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "electronic-circuit": 1,
+            "iron-gear-wheel": 1,
+            "iron-plate": 1
+        },
+        "output": {
+            "inserter": 1
+        }
+    }, {
+        "id": "burner-inserter",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "iron-plate": 1,
+            "iron-gear-wheel": 1
+        },
+        "output": {
+            "burner-inserter": 1
+        }
+    }, {
+        "id": "pipe",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "iron-plate": 1
+        },
+        "output": {
+            "pipe": 1
+        }
+    }, {
+        "id": "offshore-pump",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "electronic-circuit": 2,
+            "pipe": 1,
+            "iron-gear-wheel": 1
+        },
+        "output": {
+            "offshore-pump": 1
+        }
+    }, {
+        "id": "copper-cable",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "copper-plate": 1
+        },
+        "output": {
+            "copper-cable": 2
+        }
+    }, {
+        "id": "small-electric-pole",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "wood": 2,
+            "copper-cable": 2
+        },
+        "output": {
+            "small-electric-pole": 2
+        }
+    }, {
+        "id": "pistol",
+        "time": 5,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "copper-plate": 5,
+            "iron-plate": 5
+        },
+        "output": {
+            "pistol": 1
+        }
+    }, {
+        "id": "submachine-gun",
+        "time": 10,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "iron-gear-wheel": 10,
+            "copper-plate": 5,
+            "iron-plate": 10
+        },
+        "output": {
+            "submachine-gun": 1
+        }
+    }, {
+        "id": "firearm-magazine",
+        "time": 1,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "iron-plate": 4
+        },
+        "output": {
+            "firearm-magazine": 1
+        }
+    }, {
+        "id": "light-armor",
+        "time": 3,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "iron-plate": 40
+        },
+        "output": {
+            "light-armor": 1
+        }
+    }, {
+        "id": "radar",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "electronic-circuit": 5,
+            "iron-gear-wheel": 5,
+            "iron-plate": 10
+        },
+        "output": {
+            "radar": 1
+        }
+    }, {
+        "id": "small-lamp",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "electronic-circuit": 1,
+            "iron-stick": 3,
+            "iron-plate": 1
+        },
+        "output": {
+            "small-lamp": 1
+        }
+    }, {
+        "id": "pipe-to-ground",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "pipe": 10,
+            "iron-plate": 5
+        },
+        "output": {
+            "pipe-to-ground": 2
+        }
+    }, {
+        "id": "assembling-machine-1",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "electronic-circuit": 3,
+            "iron-gear-wheel": 5,
+            "iron-plate": 9
+        },
+        "output": {
+            "assembling-machine-1": 1
+        }
+    }, {
+        "id": "repair-pack",
+        "time": 0,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "electronic-circuit": 2,
+            "iron-gear-wheel": 2
+        },
+        "output": {
+            "repair-pack": 1
+        }
+    }, {
+        "id": "gun-turret",
+        "time": 8,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "iron-gear-wheel": 10,
+            "copper-plate": 10,
+            "iron-plate": 20
+        },
+        "output": {
+            "gun-turret": 1
         }
     }, {
         "id": "night-vision-equipment",
@@ -412,6 +719,151 @@
             "personal-roboport-mk2-equipment": 1
         }
     }, {
+        "id": "basic-oil-processing",
+        "time": 5,
+        "building": ["oil-refinery"],
+        "input": {
+            "crude-oil": 100
+        },
+        "output": {
+            "heavy-oil": 30,
+            "light-oil": 30,
+            "petroleum-gas": 40
+        }
+    }, {
+        "id": "advanced-oil-processing",
+        "time": 5,
+        "building": ["oil-refinery"],
+        "input": {
+            "water": 50,
+            "crude-oil": 100
+        },
+        "output": {
+            "heavy-oil": 10,
+            "light-oil": 45,
+            "petroleum-gas": 55
+        }
+    }, {
+        "id": "coal-liquefaction",
+        "time": 5,
+        "building": ["oil-refinery"],
+        "input": {
+            "coal": 10,
+            "heavy-oil": 25,
+            "steam": 50
+        },
+        "output": {
+            "heavy-oil": 35,
+            "light-oil": 15,
+            "petroleum-gas": 20
+        }
+    }, {
+        "id": "heavy-oil-cracking",
+        "time": 3,
+        "building": ["chemical-plant"],
+        "input": {
+            "water": 30,
+            "heavy-oil": 40
+        },
+        "output": {
+            "light-oil": 30
+        }
+    }, {
+        "id": "light-oil-cracking",
+        "time": 3,
+        "building": ["chemical-plant"],
+        "input": {
+            "water": 30,
+            "light-oil": 30
+        },
+        "output": {
+            "petroleum-gas": 20
+        }
+    }, {
+        "id": "sulfuric-acid",
+        "time": 1,
+        "building": ["chemical-plant"],
+        "input": {
+            "sulfur": 5,
+            "iron-plate": 1,
+            "water": 100
+        },
+        "output": {
+            "sulfuric-acid": 50
+        }
+    }, {
+        "id": "plastic-bar",
+        "time": 1,
+        "building": ["chemical-plant"],
+        "input": {
+            "petroleum-gas": 20,
+            "coal": 1
+        },
+        "output": {
+            "plastic-bar": 2
+        }
+    }, {
+        "id": "solid-fuel-from-light-oil",
+        "time": 3,
+        "building": ["chemical-plant"],
+        "input": {
+            "light-oil": 10
+        },
+        "output": {
+            "solid-fuel": 1
+        }
+    }, {
+        "id": "solid-fuel-from-petroleum-gas",
+        "time": 3,
+        "building": ["chemical-plant"],
+        "input": {
+            "petroleum-gas": 20
+        },
+        "output": {
+            "solid-fuel": 1
+        }
+    }, {
+        "id": "solid-fuel-from-heavy-oil",
+        "time": 3,
+        "building": ["chemical-plant"],
+        "input": {
+            "heavy-oil": 20
+        },
+        "output": {
+            "solid-fuel": 1
+        }
+    }, {
+        "id": "sulfur",
+        "time": 1,
+        "building": ["chemical-plant"],
+        "input": {
+            "water": 30,
+            "petroleum-gas": 30
+        },
+        "output": {
+            "sulfur": 2
+        }
+    }, {
+        "id": "lubricant",
+        "time": 1,
+        "building": ["chemical-plant"],
+        "input": {
+            "heavy-oil": 10
+        },
+        "output": {
+            "lubricant": 10
+        }
+    }, {
+        "id": "empty-barrel",
+        "time": 1,
+        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
+        "input": {
+            "steel-plate": 1
+        },
+        "output": {
+            "empty-barrel": 1
+        }
+    }, {
         "id": "steel-plate",
         "time": 17,
         "building": ["electric-furnace", "steel-furnace", "stone-furnace"],
@@ -423,7 +875,7 @@
         }
     }, {
         "id": "long-handed-inserter",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-gear-wheel": 1,
@@ -435,7 +887,7 @@
         }
     }, {
         "id": "fast-inserter",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "electronic-circuit": 2,
@@ -447,7 +899,7 @@
         }
     }, {
         "id": "filter-inserter",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "fast-inserter": 1,
@@ -458,7 +910,7 @@
         }
     }, {
         "id": "stack-inserter",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-gear-wheel": 15,
@@ -471,7 +923,7 @@
         }
     }, {
         "id": "stack-filter-inserter",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "stack-inserter": 1,
@@ -508,7 +960,7 @@
         "time": 60,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
-            "speed-module-2": 4,
+            "speed-module-2": 5,
             "advanced-circuit": 5,
             "processing-unit": 5
         },
@@ -586,33 +1038,8 @@
             "effectivity-module-3": 1
         }
     }, {
-        "id": "laser-turret",
-        "time": 20,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "steel-plate": 20,
-            "electronic-circuit": 20,
-            "battery": 12
-        },
-        "output": {
-            "laser-turret": 1
-        }
-    }, {
-        "id": "flamethrower-turret",
-        "time": 20,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "steel-plate": 30,
-            "iron-gear-wheel": 15,
-            "pipe": 10,
-            "engine-unit": 5
-        },
-        "output": {
-            "flamethrower-turret": 1
-        }
-    }, {
         "id": "player-port",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "electronic-circuit": 10,
@@ -624,7 +1051,7 @@
         }
     }, {
         "id": "fast-transport-belt",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-gear-wheel": 5,
@@ -635,7 +1062,7 @@
         }
     }, {
         "id": "express-transport-belt",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-gear-wheel": 10,
@@ -659,7 +1086,7 @@
         }
     }, {
         "id": "assembling-machine-2",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-plate": 9,
@@ -672,7 +1099,7 @@
         }
     }, {
         "id": "assembling-machine-3",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "speed-module": 4,
@@ -683,7 +1110,7 @@
         }
     }, {
         "id": "car",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "engine-unit": 8,
@@ -695,7 +1122,7 @@
         }
     }, {
         "id": "tank",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "engine-unit": 32,
@@ -708,7 +1135,7 @@
         }
     }, {
         "id": "rail",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "stone": 1,
@@ -720,7 +1147,7 @@
         }
     }, {
         "id": "locomotive",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "engine-unit": 20,
@@ -732,7 +1159,7 @@
         }
     }, {
         "id": "cargo-wagon",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-gear-wheel": 10,
@@ -757,7 +1184,7 @@
         }
     }, {
         "id": "train-stop",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "electronic-circuit": 5,
@@ -769,7 +1196,7 @@
         }
     }, {
         "id": "rail-signal",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "electronic-circuit": 1,
@@ -780,7 +1207,7 @@
         }
     }, {
         "id": "rail-chain-signal",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "electronic-circuit": 1,
@@ -838,7 +1265,7 @@
         }
     }, {
         "id": "iron-chest",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-plate": 8
@@ -848,7 +1275,7 @@
         }
     }, {
         "id": "steel-chest",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-plate": 8
@@ -858,7 +1285,7 @@
         }
     }, {
         "id": "stone-wall",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "stone-brick": 5
@@ -868,7 +1295,7 @@
         }
     }, {
         "id": "gate",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "stone-wall": 1,
@@ -980,7 +1407,7 @@
         "input": {
             "advanced-circuit": 1,
             "engine-unit": 1,
-            "assembling-machine-1": 1
+            "electric-mining-drill": 1
         },
         "output": {
             "science-pack-3": 1
@@ -1002,8 +1429,8 @@
         "time": 14,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
-            "pumpjack": 1,
             "electric-engine-unit": 1,
+            "assembling-machine-1": 1,
             "electric-furnace": 1
         },
         "output": {
@@ -1024,7 +1451,7 @@
         }
     }, {
         "id": "lab",
-        "time": 5,
+        "time": 3,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "electronic-circuit": 10,
@@ -1036,7 +1463,7 @@
         }
     }, {
         "id": "red-wire",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "electronic-circuit": 1,
@@ -1047,7 +1474,7 @@
         }
     }, {
         "id": "green-wire",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "electronic-circuit": 1,
@@ -1069,10 +1496,10 @@
         }
     }, {
         "id": "fast-underground-belt",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
-            "iron-gear-wheel": 20,
+            "iron-gear-wheel": 40,
             "underground-belt": 2
         },
         "output": {
@@ -1080,10 +1507,10 @@
         }
     }, {
         "id": "express-underground-belt",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
-            "iron-gear-wheel": 40,
+            "iron-gear-wheel": 80,
             "fast-underground-belt": 2,
             "lubricant": 40
         },
@@ -1189,7 +1616,7 @@
         }
     }, {
         "id": "logistic-robot",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "flying-robot-frame": 1,
@@ -1200,7 +1627,7 @@
         }
     }, {
         "id": "construction-robot",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "flying-robot-frame": 1,
@@ -1211,7 +1638,7 @@
         }
     }, {
         "id": "logistic-chest-passive-provider",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-chest": 1,
@@ -1223,7 +1650,7 @@
         }
     }, {
         "id": "logistic-chest-active-provider",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-chest": 1,
@@ -1235,7 +1662,7 @@
         }
     }, {
         "id": "logistic-chest-storage",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-chest": 1,
@@ -1247,7 +1674,7 @@
         }
     }, {
         "id": "logistic-chest-requester",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-chest": 1,
@@ -1273,7 +1700,7 @@
         }
     }, {
         "id": "roboport",
-        "time": 15,
+        "time": 10,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-plate": 45,
@@ -1285,7 +1712,7 @@
         }
     }, {
         "id": "steel-axe",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-plate": 5,
@@ -1296,7 +1723,7 @@
         }
     }, {
         "id": "big-electric-pole",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-plate": 5,
@@ -1307,7 +1734,7 @@
         }
     }, {
         "id": "substation",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-plate": 10,
@@ -1319,7 +1746,7 @@
         }
     }, {
         "id": "medium-electric-pole",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-plate": 2,
@@ -1377,7 +1804,7 @@
         }
     }, {
         "id": "pumpjack",
-        "time": 10,
+        "time": 5,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-plate": 5,
@@ -1390,7 +1817,7 @@
         }
     }, {
         "id": "oil-refinery",
-        "time": 20,
+        "time": 10,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-plate": 15,
@@ -1488,7 +1915,7 @@
         }
     }, {
         "id": "chemical-plant",
-        "time": 10,
+        "time": 5,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-plate": 5,
@@ -1514,7 +1941,7 @@
         }
     }, {
         "id": "arithmetic-combinator",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "copper-cable": 5,
@@ -1525,7 +1952,7 @@
         }
     }, {
         "id": "decider-combinator",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "copper-cable": 5,
@@ -1536,7 +1963,7 @@
         }
     }, {
         "id": "constant-combinator",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "copper-cable": 5,
@@ -1643,7 +2070,7 @@
         }
     }, {
         "id": "hazard-concrete",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "concrete": 10
@@ -1653,7 +2080,7 @@
         }
     }, {
         "id": "landfill",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "stone": 20
@@ -1663,7 +2090,7 @@
         }
     }, {
         "id": "electric-energy-interface",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-plate": 2,
@@ -1745,7 +2172,7 @@
         }
     }, {
         "id": "heat-exchanger",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-plate": 10,
@@ -1757,7 +2184,7 @@
         }
     }, {
         "id": "heat-pipe",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "steel-plate": 10,
@@ -1768,7 +2195,7 @@
         }
     }, {
         "id": "steam-turbine",
-        "time": 0.5,
+        "time": 0,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-gear-wheel": 50,
@@ -1779,488 +2206,29 @@
             "steam-turbine": 1
         }
     }, {
-        "id": "copper-plate",
-        "time": 3,
-        "building": ["electric-furnace", "steel-furnace", "stone-furnace"],
-        "input": {
-            "copper-ore": 1
-        },
-        "output": {
-            "copper-plate": 1
-        }
-    }, {
-        "id": "iron-plate",
-        "time": 3,
-        "building": ["electric-furnace", "steel-furnace", "stone-furnace"],
-        "input": {
-            "iron-ore": 1
-        },
-        "output": {
-            "iron-plate": 1
-        }
-    }, {
-        "id": "stone-brick",
-        "time": 3,
-        "building": ["electric-furnace", "steel-furnace", "stone-furnace"],
-        "input": {
-            "stone": 2
-        },
-        "output": {
-            "stone-brick": 1
-        }
-    }, {
-        "id": "gun-turret",
-        "time": 8,
+        "id": "laser-turret",
+        "time": 20,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
-            "iron-gear-wheel": 10,
-            "copper-plate": 10,
-            "iron-plate": 20
+            "steel-plate": 20,
+            "electronic-circuit": 20,
+            "battery": 12
         },
         "output": {
-            "gun-turret": 1
+            "laser-turret": 1
         }
     }, {
-        "id": "wood",
-        "time": 0.5,
+        "id": "flamethrower-turret",
+        "time": 20,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
-            "raw-wood": 1
-        },
-        "output": {
-            "wood": 2
-        }
-    }, {
-        "id": "wooden-chest",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "wood": 4
-        },
-        "output": {
-            "wooden-chest": 1
-        }
-    }, {
-        "id": "iron-stick",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "iron-plate": 1
-        },
-        "output": {
-            "iron-stick": 2
-        }
-    }, {
-        "id": "iron-axe",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "iron-stick": 2,
-            "iron-plate": 3
-        },
-        "output": {
-            "iron-axe": 1
-        }
-    }, {
-        "id": "stone-furnace",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "stone": 5
-        },
-        "output": {
-            "stone-furnace": 1
-        }
-    }, {
-        "id": "boiler",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "stone-furnace": 1,
-            "pipe": 4
-        },
-        "output": {
-            "boiler": 1
-        }
-    }, {
-        "id": "steam-engine",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "iron-gear-wheel": 8,
-            "pipe": 5,
-            "iron-plate": 10
-        },
-        "output": {
-            "steam-engine": 1
-        }
-    }, {
-        "id": "iron-gear-wheel",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "iron-plate": 2
-        },
-        "output": {
-            "iron-gear-wheel": 1
-        }
-    }, {
-        "id": "electronic-circuit",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "iron-plate": 1,
-            "copper-cable": 3
-        },
-        "output": {
-            "electronic-circuit": 1
-        }
-    }, {
-        "id": "transport-belt",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "iron-plate": 1,
-            "iron-gear-wheel": 1
-        },
-        "output": {
-            "transport-belt": 2
-        }
-    }, {
-        "id": "electric-mining-drill",
-        "time": 2,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "electronic-circuit": 3,
-            "iron-gear-wheel": 5,
-            "iron-plate": 10
-        },
-        "output": {
-            "electric-mining-drill": 1
-        }
-    }, {
-        "id": "burner-mining-drill",
-        "time": 2,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "iron-gear-wheel": 3,
-            "stone-furnace": 1,
-            "iron-plate": 3
-        },
-        "output": {
-            "burner-mining-drill": 1
-        }
-    }, {
-        "id": "inserter",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "electronic-circuit": 1,
-            "iron-gear-wheel": 1,
-            "iron-plate": 1
-        },
-        "output": {
-            "inserter": 1
-        }
-    }, {
-        "id": "burner-inserter",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "iron-plate": 1,
-            "iron-gear-wheel": 1
-        },
-        "output": {
-            "burner-inserter": 1
-        }
-    }, {
-        "id": "pipe",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "iron-plate": 1
-        },
-        "output": {
-            "pipe": 1
-        }
-    }, {
-        "id": "offshore-pump",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "electronic-circuit": 2,
-            "pipe": 1,
-            "iron-gear-wheel": 1
-        },
-        "output": {
-            "offshore-pump": 1
-        }
-    }, {
-        "id": "copper-cable",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "copper-plate": 1
-        },
-        "output": {
-            "copper-cable": 2
-        }
-    }, {
-        "id": "small-electric-pole",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "wood": 2,
-            "copper-cable": 2
-        },
-        "output": {
-            "small-electric-pole": 2
-        }
-    }, {
-        "id": "pistol",
-        "time": 5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "copper-plate": 5,
-            "iron-plate": 5
-        },
-        "output": {
-            "pistol": 1
-        }
-    }, {
-        "id": "submachine-gun",
-        "time": 10,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "iron-gear-wheel": 10,
-            "copper-plate": 5,
-            "iron-plate": 10
-        },
-        "output": {
-            "submachine-gun": 1
-        }
-    }, {
-        "id": "firearm-magazine",
-        "time": 1,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "iron-plate": 4
-        },
-        "output": {
-            "firearm-magazine": 1
-        }
-    }, {
-        "id": "light-armor",
-        "time": 3,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "iron-plate": 40
-        },
-        "output": {
-            "light-armor": 1
-        }
-    }, {
-        "id": "radar",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "electronic-circuit": 5,
-            "iron-gear-wheel": 5,
-            "iron-plate": 10
-        },
-        "output": {
-            "radar": 1
-        }
-    }, {
-        "id": "small-lamp",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "electronic-circuit": 1,
-            "iron-stick": 3,
-            "iron-plate": 1
-        },
-        "output": {
-            "small-lamp": 1
-        }
-    }, {
-        "id": "pipe-to-ground",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
+            "steel-plate": 30,
+            "iron-gear-wheel": 15,
             "pipe": 10,
-            "iron-plate": 5
+            "engine-unit": 5
         },
         "output": {
-            "pipe-to-ground": 2
-        }
-    }, {
-        "id": "assembling-machine-1",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "electronic-circuit": 3,
-            "iron-gear-wheel": 5,
-            "iron-plate": 9
-        },
-        "output": {
-            "assembling-machine-1": 1
-        }
-    }, {
-        "id": "repair-pack",
-        "time": 0.5,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "electronic-circuit": 2,
-            "iron-gear-wheel": 2
-        },
-        "output": {
-            "repair-pack": 1
-        }
-    }, {
-        "id": "basic-oil-processing",
-        "time": 5,
-        "building": ["oil-refinery"],
-        "input": {
-            "crude-oil": 100
-        },
-        "output": {
-            "heavy-oil": 30,
-            "light-oil": 30,
-            "petroleum-gas": 40
-        }
-    }, {
-        "id": "advanced-oil-processing",
-        "time": 5,
-        "building": ["oil-refinery"],
-        "input": {
-            "water": 50,
-            "crude-oil": 100
-        },
-        "output": {
-            "heavy-oil": 10,
-            "light-oil": 45,
-            "petroleum-gas": 55
-        }
-    }, {
-        "id": "coal-liquefaction",
-        "time": 5,
-        "building": ["oil-refinery"],
-        "input": {
-            "coal": 10,
-            "heavy-oil": 25,
-            "water": 50
-        },
-        "output": {
-            "heavy-oil": 35,
-            "light-oil": 15,
-            "petroleum-gas": 20
-        }
-    }, {
-        "id": "heavy-oil-cracking",
-        "time": 3,
-        "building": ["chemical-plant"],
-        "input": {
-            "water": 30,
-            "heavy-oil": 40
-        },
-        "output": {
-            "light-oil": 30
-        }
-    }, {
-        "id": "light-oil-cracking",
-        "time": 3,
-        "building": ["chemical-plant"],
-        "input": {
-            "water": 30,
-            "light-oil": 30
-        },
-        "output": {
-            "petroleum-gas": 20
-        }
-    }, {
-        "id": "sulfuric-acid",
-        "time": 1,
-        "building": ["chemical-plant"],
-        "input": {
-            "sulfur": 5,
-            "iron-plate": 1,
-            "water": 10
-        },
-        "output": {
-            "sulfuric-acid": 50
-        }
-    }, {
-        "id": "plastic-bar",
-        "time": 1,
-        "building": ["chemical-plant"],
-        "input": {
-            "petroleum-gas": 20,
-            "coal": 1
-        },
-        "output": {
-            "plastic-bar": 2
-        }
-    }, {
-        "id": "solid-fuel-from-light-oil",
-        "time": 3,
-        "building": ["chemical-plant"],
-        "input": {
-            "light-oil": 10
-        },
-        "output": {
-            "solid-fuel": 1
-        }
-    }, {
-        "id": "solid-fuel-from-petroleum-gas",
-        "time": 3,
-        "building": ["chemical-plant"],
-        "input": {
-            "petroleum-gas": 20
-        },
-        "output": {
-            "solid-fuel": 1
-        }
-    }, {
-        "id": "solid-fuel-from-heavy-oil",
-        "time": 3,
-        "building": ["chemical-plant"],
-        "input": {
-            "heavy-oil": 20
-        },
-        "output": {
-            "solid-fuel": 1
-        }
-    }, {
-        "id": "sulfur",
-        "time": 1,
-        "building": ["chemical-plant"],
-        "input": {
-            "water": 30,
-            "petroleum-gas": 30
-        },
-        "output": {
-            "sulfur": 2
-        }
-    }, {
-        "id": "lubricant",
-        "time": 1,
-        "building": ["chemical-plant"],
-        "input": {
-            "heavy-oil": 10
-        },
-        "output": {
-            "lubricant": 10
-        }
-    }, {
-        "id": "empty-barrel",
-        "time": 1,
-        "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "input": {
-            "steel-plate": 1
-        },
-        "output": {
-            "empty-barrel": 1
+            "flamethrower-turret": 1
         }
     }]
 }
