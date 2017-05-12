@@ -2,6 +2,38 @@
     "file_version": 1.0,
     "game_version": 0.13,
     "data": [{
+        "id": "iron-ore",
+        "time": 2,
+        "building": ["electric-mining-drill", "burner-mining-drill"],
+        "input": {},
+        "output": {
+            "iron-ore": 0.9
+        }
+    }, {
+        "id": "copper-ore",
+        "time": 2,
+        "building": ["electric-mining-drill", "burner-mining-drill"],
+        "input": {},
+        "output": {
+            "copper-ore": 0.9
+        }
+    }, {
+        "id": "coal",
+        "time": 2,
+        "building": ["electric-mining-drill", "burner-mining-drill"],
+        "input": {},
+        "output": {
+            "coal": 0.9
+        }
+    }, {
+        "id": "stone",
+        "time": 2,
+        "building": ["electric-mining-drill", "burner-mining-drill"],
+        "input": {},
+        "output": {
+            "stone": 0.4
+        }
+    }, {
         "id": "piercing-rounds-magazine",
         "time": 3,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
