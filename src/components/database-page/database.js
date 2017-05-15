@@ -6,7 +6,7 @@ define(['knockout', 'text!./database.html', 'jquery',
 ], function(ko, template, $) {
 
     var luaFiles = Array.prototype.slice.apply(arguments, [3]);
-        
+
     function DatabaseViewModel(route) {
         this.file_content = ko.observable();
         this.collection = ko.observable();
@@ -45,7 +45,36 @@ define(['knockout', 'text!./database.html', 'jquery',
         'oil-processing': ['oil-refinery'],
         'smelting': ['electric-furnace', 'steel-furnace', 'stone-furnace'],
         'rocket-building': ['rocket-silo']
-    }
+    };
+
+    var intermediate_products = {
+        'wood': 1,
+        'iron-plate': 1,
+        'copper-plate': 1,
+        'steel-plate': 1,
+        'stone-brick': 1,
+        'sulfur': 1,
+        'plastic-bar': 1,
+        'battery': 1,
+        'iron-stick': 1,
+        'iron-gear-wheel': 1,
+        'copper-cable': 1,
+        'eletronic-circuit': 1,
+        'advanced-circuit': 1,
+        'processing-unit': 1,
+        'engine-unit': 1,
+        'flying-robot-frame': 1,
+        'science-pack-1': 1,
+        'science-pack-2': 1,
+        'science-pack-3': 1,
+        'military-science-pack': 1,
+        'production-science-pack': 1,
+        'high-tech-science-pack': 1,
+        'space-science-pack': 1,
+        'empty-barrel': 1,
+        'explosives': 1
+    };
+
     DatabaseViewModel.prototype.parseData = function(file) {
         var text = luaToJson(file || this.file_content());
         var data = eval(text);
@@ -59,6 +88,7 @@ define(['knockout', 'text!./database.html', 'jquery',
             result.push({
                 id: dataitem.name,
                 time: dificultInfo.energy_required || 0.5,
+                accept_productivity: !!intermediate_products[dataitem.name],
                 building: building_map[dataitem.category] || building_map["crafting"],
                 input: parseIngredients(dificultInfo.ingredients),
                 output: parseIngredients(dificultInfo.result || dificultInfo.results, dificultInfo.result_count)
