@@ -43,7 +43,8 @@ define(['knockout', 'text!./database.html', 'jquery',
         'crafting': ['assembling-machine-3', 'assembling-machine-2', 'assembling-machine-1'],
         'chemistry': ['chemical-plant'],
         'oil-processing': ['oil-refinery'],
-        'smelting': ['electric-furnace', 'steel-furnace', 'stone-furnace']
+        'smelting': ['electric-furnace', 'steel-furnace', 'stone-furnace'],
+        'rocket-building': ['rocket-silo']
     }
     DatabaseViewModel.prototype.parseData = function(file) {
         var text = luaToJson(file || this.file_content());
@@ -57,7 +58,7 @@ define(['knockout', 'text!./database.html', 'jquery',
 
             result.push({
                 id: dataitem.name,
-                time: dificultInfo.energy_required | 0.5,
+                time: dificultInfo.energy_required || 0.5,
                 building: building_map[dataitem.category] || building_map["crafting"],
                 input: parseIngredients(dificultInfo.ingredients),
                 output: parseIngredients(dificultInfo.result || dificultInfo.results, dificultInfo.result_count)
