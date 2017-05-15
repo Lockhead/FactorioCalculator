@@ -8,7 +8,7 @@ define(['knockout', 'text!./item-icon.html', 'i18n'], function(ko, template, $i)
 
         var name = ko.pureComputed(() => $i($self.id()));
 
-
+        $self.enabled = ko.pureComputed(() => params.enabled == null ? true : (typeof(params.enabled) == 'function' ? params.enabled() : params.enabled));
         $self.hasValue = !!params.value;
         $self.displayName = ko.pureComputed(() => params.displayName ? name() : "");
 
