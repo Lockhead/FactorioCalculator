@@ -47,6 +47,35 @@ define(['knockout', 'text!./database.html', 'jquery',
         'oil-processing': ['oil-refinery'],
         'smelting': ['electric-furnace', 'steel-furnace', 'stone-furnace']
     }
+    
+    var intermediate_products = {
+        'wood': 1,
+        'iron-plate': 1,
+        'copper-plate': 1,
+        'steel-plate': 1,
+        'stone-brick': 1,
+        'sulfur': 1,
+        'plastic-bar': 1,
+        'battery': 1,
+        'iron-stick': 1,
+        'iron-gear-wheel': 1,
+        'copper-cable': 1,
+        'eletronic-circuit': 1,
+        'advanced-circuit': 1,
+        'processing-unit': 1,
+        'engine-unit': 1,
+        'flying-robot-frame': 1,
+        'science-pack-1': 1,
+        'science-pack-2': 1,
+        'science-pack-3': 1,
+        'military-science-pack': 1,
+        'production-science-pack': 1,
+        'high-tech-science-pack': 1,
+        'space-science-pack': 1,
+        'empty-barrel': 1,
+        'explosives': 1
+    };
+
     DatabaseViewModel.prototype.parseData = function(file) {
         var text = luaToJson(file || this.file_content());
         var data = eval(text);
@@ -59,13 +88,15 @@ define(['knockout', 'text!./database.html', 'jquery',
                 result.push({
                     id: dataitem.name,
                     building: building_map[dataitem.category] || building_map["crafting"],
+                    accept_productivity: !!intermediate_products[dataitem.name],
                     normal: parseDifficulty(dataitem.normal),
                     expensive: parseDifficulty(dataitem.expensive)
                 });
             } else {
                 result.push($.extend({
                         id: dataitem.name,
-                        building: building_map[dataitem.category] || building_map["crafting"]
+                        building: building_map[dataitem.category] || building_map["crafting"],
+                        accept_productivity: !!intermediate_products[dataitem.name]
                     }                    
                     ,parseDifficulty(dataitem)
                 ));
