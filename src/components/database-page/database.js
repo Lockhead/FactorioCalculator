@@ -6,7 +6,7 @@ define(['knockout', 'text!./database.html', 'jquery',
 ], function(ko, template, $) {
 
     var luaFiles = Array.prototype.slice.apply(arguments, [3]);
-        
+
     function DatabaseViewModel(route) {
         this.file_content = ko.observable();
         this.collection = ko.observable();
@@ -47,7 +47,6 @@ define(['knockout', 'text!./database.html', 'jquery',
         'oil-processing': ['oil-refinery'],
         'smelting': ['electric-furnace', 'steel-furnace', 'stone-furnace']
     }
-    
     var intermediate_products = {
         'wood': 1,
         'iron-plate': 1,
@@ -101,7 +100,6 @@ define(['knockout', 'text!./database.html', 'jquery',
                     ,parseDifficulty(dataitem)
                 ));
             }
-
         }
 
         //debugger;

@@ -17,6 +17,8 @@ define(['knockout', 'text!./production-row.html', 'data', 'app/formulae', 'i18n'
         $self.inputProduction = {};
         $self.header = $i(params.recipe.id)||params.recipe.id;
         $self.supply = ko.observable();
+        
+        $self.enableProductivity = !!params.recipe.accept_productivity;
 
         $self.options = {
             calculateCycle: params.calculateCycle,
