@@ -9,7 +9,6 @@ define(['knockout', 'text!./production-table.html'], function(ko, template) {
         $self.numberOfBuildings = params.numberOfBuildings;
         $self.removeRecipeClick = params.removeRecipeClick;
         $self.includeChildrenClick = params.includeChildrenClick;
-        $self.expensiveRecipes = params.expensiveRecipes;
     }
 
 
