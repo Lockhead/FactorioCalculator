@@ -2,7 +2,7 @@ define(['knockout', 'text!./calculator.html', 'data', /*pre-load*/ 'components/p
 
     function CalculatorViewModel(route) {
         var $self = this;
-        
+
         $self.isV15 = !getQueryVariable('v');
 
         $self.calculateBuildings = ko.observable(true);
@@ -91,7 +91,7 @@ define(['knockout', 'text!./calculator.html', 'data', /*pre-load*/ 'components/p
                     availableRecipes: recipeByOutput,
                     building: ko.observable(dataLoader.buildings.get(selectedRecipe.building[0])),
                     availableBuildings: selectedRecipe.building,
-                    module: dataLoader.modules.init(1),
+                    module: dataLoader.modules.clone(0, 1),
                     children: ko.observableArray(_loadInputs(length - 1, selectedRecipe) || [])
                 });
             }

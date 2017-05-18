@@ -16,6 +16,34 @@ define(['knockout'], function(ko) {
             });
         }
     };
-    
-    return { loaded: true }
+
+    // source : http://www.knockmeout.net/2011/04/pausing-notifications-in-knockoutjs.html
+    ko.pauseableComputed = function(evaluatorFunction, evaluatorFunctionTarget) {
+        var _cachedValue = "";
+        var _isPaused = ko.observable(false);
+        
+        var result = ko.computed(function() {
+            if (!_isPaused()) {
+                return evaluatorFunction.call(evaluatorFunctionTarget);
+            }
+            return _cachedValue;
+        }, evaluatorFunctionTarget);
+
+        result.pause = function() {
+            _cachedValue = this();
+            _isPaused(true);
+        }.bind(result);
+
+        result.resume = function() {
+            _cachedValue = "";
+            _isPaused(false);
+        }
+
+        return result;
+    };
+
+
+    return {
+        loaded: true
+    }
 });

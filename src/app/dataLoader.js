@@ -28,7 +28,7 @@ define(['knockout', 'jquery', 'app/LoadManager'], function(ko, $, Manager) {
 
         return BASE_URL.replace('{0}', url);
     }
-    
+
     var Recipes = new Manager(getRecipeUrl(), handleRecipeResult, 'i18n');
     Recipes.getByOutput = function(id) {
         return this.mapOutput[id]
@@ -38,60 +38,76 @@ define(['knockout', 'jquery', 'app/LoadManager'], function(ko, $, Manager) {
 
     var Config = new Manager(BASE_URL.replace('{0}', 'configuration'), false);
 
-    var availableModules = {
-        speed: {
-            level1: ko.observable(0),
-            level2: ko.observable(0),
-            level3: ko.observable(0)
-        },
-        production: {
-            level1: ko.observable(0),
-            level2: ko.observable(0),
-            level3: ko.observable(0)
-        },
-        efficiency: {
-            level1: ko.observable(0),
-            level2: ko.observable(0),
-            level3: ko.observable(0)
-        },
-        clone: function(keepDependency) {
-            return {
-                speed: {
-                    level1: keepDependency ? availableModules.speed.level1 : ko.observable(availableModules.speed.level1.peek()),
-                    level2: keepDependency ? availableModules.speed.level2 : ko.observable(availableModules.speed.level2.peek()),
-                    level3: keepDependency ? availableModules.speed.level3() : ko.observable(availableModules.speed.level3.peek())
-                },
-                production: {
-                    level1: keepDependency ? availableModules.production.level1 : ko.observable(availableModules.production.level1.peek()),
-                    level2: keepDependency ? availableModules.production.level2 : ko.observable(availableModules.production.level2.peek()),
-                    level3: keepDependency ? availableModules.production.level3 : ko.observable(availableModules.production.level3.peek())
-                },
-                efficiency: {
-                    level1: keepDependency ? availableModules.efficiency.level1 : ko.observable(availableModules.efficiency.level1.peek()),
-                    level2: keepDependency ? availableModules.efficiency.level2 : ko.observable(availableModules.efficiency.level2.peek()),
-                    level3: keepDependency ? availableModules.efficiency.level3 : ko.observable(availableModules.efficiency.level3.peek())
-                }
-            };
-        },
-        init: function(watch) {
-            return {
-                speed: {
-                    level1: watch ? ko.observable(0) : 0,
-                    level2: watch ? ko.observable(0) : 0,
-                    level3: watch ? ko.observable(0) : 0
-                },
-                production: {
-                    level1: watch ? ko.observable(0) : 0,
-                    level2: watch ? ko.observable(0) : 0,
-                    level3: watch ? ko.observable(0) : 0
-                },
-                efficiency: {
-                    level1: watch ? ko.observable(0) : 0,
-                    level2: watch ? ko.observable(0) : 0,
-                    level3: watch ? ko.observable(0) : 0
-                }
-            };
+    function ModuleLevels(watch) {
+        var $self = this;
+        $self.level1 = watch ? ko.observable(0) : 0;
+        $self.level2 = watch ? ko.observable(0) : 0;
+        $self.level3 = watch ? ko.observable(0) : 0;
+
+        $self.reset = () => {
+            if (typeof($self.level1) === 'function') {
+                $self.level1(0);
+            }
+            else {
+                $self.level1 = 0;
+            }
+
+            if (typeof($self.level2) === 'function') {
+                $self.level2(0);
+            }
+            else {
+                $self.level2 = 0;
+            }
+
+            if (typeof($self.level3) === 'function') {
+                $self.level3(0);
+            }
+            else {
+                $self.level3 = 0;
+            }
         }
+    }
+    
+    ModuleLevels.prototype.pauseUpdates = () => {
+        this.level1.pause();
+        this.level2.pause();
+        this.level3.pause();
+    }
+    ModuleLevels.prototype.resumeUpdates = () => {
+        this.level1.resume();
+        this.level2.resume();
+        this.level3.resume();
+    }
+
+    function Modules(watch) {
+        var $self = this;
+        $self.speed = new ModuleLevels(watch);
+        $self.production = new ModuleLevels(watch);
+        $self.efficiency = new ModuleLevels(watch);
+
+        $self.clone = (keepDependency, watch) => {
+            var newModules = new Modules(typeof(watch) === typeof(undefined) ? true : watch);
+            if (keepDependency) {
+                newModules.speed = $self.speed;
+                newModules.production = $self.production;
+                newModules.efficiency = $self.efficiency;
+            }
+            return newModules;
+        };
+
+        $self.reset = () => {
+            //this.speed.pauseUpdates();
+            //this.production.pauseUpdates();
+            //this.efficiency.pauseUpdates();
+
+            $self.speed.reset();
+            $self.production.reset();
+            $self.efficiency.reset();
+
+            //this.speed.resumeUpdates();
+            //this.production.resumeUpdates();
+            //this.efficiency.resumeUpdates();
+        };
     }
 
     return {
@@ -99,6 +115,6 @@ define(['knockout', 'jquery', 'app/LoadManager'], function(ko, $, Manager) {
         buildings: Buildings,
         locales: Locales,
         config: Config,
-        modules: availableModules
+        modules: new Modules(true)
     }
 })

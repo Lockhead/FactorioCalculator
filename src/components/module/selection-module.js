@@ -2,7 +2,11 @@ define(['knockout', 'text!./selection-module.html'], function(ko, templateMarkup
 
     function SelectionModule(params) {
         var $self = this;
-        $self.selectedModules = params.selectedModules;
+        $self.selectedModules = ko.computed(() => {
+            var recipe = params.selectedRecipe(); // just enable update on recipe change;
+            params.selectedModules.reset();
+            return params.selectedModules;
+        });
         $self.enableProductivity = ko.computed(() => {
             var recipe = params.selectedRecipe();
             var enabled = false;
