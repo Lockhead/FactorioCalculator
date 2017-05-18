@@ -15,10 +15,10 @@
     </span>
     <!-- ko if:hasValue -->
     <!-- ko if:readonly -->
-    <input class="form-control readonly" readonly data-bind="value:value, attr: { 'type': type }">
+    <input class="form-control readonly" readonly data-bind="value:value, enable:enabled, attr: { 'type': type }">
     <!-- /ko -->
     <!-- ko if:!readonly -->
-    <input class="form-control" data-bind="value:value, attr: { 'type': type }" min=0>
+    <input class="form-control" data-bind="value:value, enable:enabled, attr: { 'type': type }" min=0>
     <!-- /ko -->
     <!-- /ko -->
 </div>
