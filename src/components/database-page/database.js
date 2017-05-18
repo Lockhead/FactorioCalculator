@@ -15,7 +15,6 @@ define(['knockout', 'text!./database.html', 'jquery',
             var file = luaFiles[fileIndex];
             this.parseData(file);
         }
-        debugger;
     }
 
     function luaToJson(lua) {
@@ -25,7 +24,7 @@ define(['knockout', 'text!./database.html', 'jquery',
             lua = lua.replace(/\{(((\n\t*)\t)\S.*(\2.*)*)\,\s--\s\[\d+\]\3\}/g, '[$1$3]');
             diff = diff - lua.length;
         } while (diff > 0);
-        //debugger;
+
         lua = lua.replace(/\s--\s\[\d+\](\n)/g, '$1'); // remove comment
         lua = lua.replace(/[\s\t\r\n]/g, ''); // remove tabs & returns
         lua = lua.replace(/\,(\})/g, '$1'); // remove trailing comma
@@ -80,7 +79,7 @@ define(['knockout', 'text!./database.html', 'jquery',
         var data = eval(text);
 
         var result = [];
-        //debugger;
+        
         for (var i = 0, len = data.length; i < len; i++) {
             var dataitem = data[i];
             var dificultInfo = dataitem.normal || dataitem;
@@ -95,7 +94,6 @@ define(['knockout', 'text!./database.html', 'jquery',
             });
         }
 
-        //debugger;
         var existing = JSON.parse(this.collection() || "[]");
         Array.prototype.push.apply(existing, result);
         this.collection(JSON.stringify(existing));
