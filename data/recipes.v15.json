@@ -391,7 +391,7 @@
     }, {
         "id": "electronic-circuit",
         "time": 0.5,
-        "accept_productivity": false,
+        "accept_productivity": true,
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "input": {
             "iron-plate": 1,
