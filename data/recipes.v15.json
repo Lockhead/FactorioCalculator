@@ -3,41 +3,41 @@
     "game_version": 0.13,
     "data": [{
         "id": "iron-ore",
+        "accept_productivity": false,
         "time": 2,
-        "building": [ "electric-mining-drill", "burner-mining-drill" ],
-        "input": {
-        },
+        "building": ["electric-mining-drill", "burner-mining-drill"],
+        "input": {},
         "output": {
             "iron-ore": 0.9
         }
-    },{
+    }, {
         "id": "copper-ore",
+        "building": ["electric-mining-drill", "burner-mining-drill"],
+        "accept_productivity": false,
         "time": 2,
-        "building": [ "electric-mining-drill", "burner-mining-drill" ],
-        "input": {
-        },
+        "input": {},
         "output": {
             "copper-ore": 0.9
         }
-    },{
+    }, {
         "id": "coal",
+        "building": ["electric-mining-drill", "burner-mining-drill"],
+        "accept_productivity": false,
         "time": 2,
-        "building": [ "electric-mining-drill", "burner-mining-drill" ],
-        "input": {
-        },
+        "input": {},
         "output": {
             "coal": 0.9
         }
-    },{
+    }, {
         "id": "stone",
+        "building": ["electric-mining-drill", "burner-mining-drill"],
+        "accept_productivity": false,
         "time": 2,
-        "building": [ "electric-mining-drill", "burner-mining-drill" ],
-        "input": {
-        },
+        "input": {},
         "output": {
             "stone": 0.4
         }
-    },{
+    }, {
         "id": "piercing-rounds-magazine",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
         "accept_productivity": false,
@@ -933,7 +933,7 @@
     }, {
         "id": "basic-oil-processing",
         "building": ["oil-refinery"],
-        "accept_productivity": false,
+        "accept_productivity": true,
         "time": 5,
         "input": {
             "crude-oil": 100
@@ -946,7 +946,7 @@
     }, {
         "id": "advanced-oil-processing",
         "building": ["oil-refinery"],
-        "accept_productivity": false,
+        "accept_productivity": true,
         "time": 5,
         "input": {
             "water": 50,
@@ -960,7 +960,7 @@
     }, {
         "id": "coal-liquefaction",
         "building": ["oil-refinery"],
-        "accept_productivity": false,
+        "accept_productivity": true,
         "time": 5,
         "input": {
             "coal": 10,
@@ -975,7 +975,7 @@
     }, {
         "id": "heavy-oil-cracking",
         "building": ["chemical-plant"],
-        "accept_productivity": false,
+        "accept_productivity": true,
         "time": 3,
         "input": {
             "water": 30,
@@ -987,7 +987,7 @@
     }, {
         "id": "light-oil-cracking",
         "building": ["chemical-plant"],
-        "accept_productivity": false,
+        "accept_productivity": true,
         "time": 3,
         "input": {
             "water": 30,
@@ -1024,7 +1024,7 @@
     }, {
         "id": "solid-fuel-from-light-oil",
         "building": ["chemical-plant"],
-        "accept_productivity": false,
+        "accept_productivity": true,
         "time": 3,
         "input": {
             "light-oil": 10
@@ -1035,7 +1035,7 @@
     }, {
         "id": "solid-fuel-from-petroleum-gas",
         "building": ["chemical-plant"],
-        "accept_productivity": false,
+        "accept_productivity": true,
         "time": 3,
         "input": {
             "petroleum-gas": 20
@@ -1046,7 +1046,7 @@
     }, {
         "id": "solid-fuel-from-heavy-oil",
         "building": ["chemical-plant"],
-        "accept_productivity": false,
+        "accept_productivity": true,
         "time": 3,
         "input": {
             "heavy-oil": 20

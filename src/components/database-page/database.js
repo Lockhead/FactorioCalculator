@@ -71,7 +71,15 @@ define(['knockout', 'text!./database.html', 'jquery',
         'high-tech-science-pack': 1,
         'space-science-pack': 1,
         'empty-barrel': 1,
-        'explosives': 1
+        'explosives': 1,
+        'advanced-oil-processing': 1,
+        'basic-oil-processing': 1,
+        'coal-liquefaction': 1,
+        'heavy-oil-cracking': 1,
+        'light-oil-cracking': 1,
+        'solid-fuel-from-heavy-oil': 1,
+        'solid-fuel-from-light-oil': 1,
+        'solid-fuel-from-petroleum-gas': 1
     };
 
     DatabaseViewModel.prototype.parseData = function(file) {
