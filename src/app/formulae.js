@@ -96,12 +96,12 @@ define(['app/recipes'], function($r) {
     function validateRecipe(selectedRecipe, selectedBuilding, loop, expensiveRecipes, action) {
         var recipe = typeof(selectedRecipe) === "function" ? selectedRecipe() : selectedRecipe;
         var building = typeof(selectedBuilding) === "function" ? selectedBuilding() : selectedBuilding;
-        var expensiveRecipes = typeof(expensiveRecipes) === "function" ? expensiveRecipes() : expensiveRecipes;
+        var expensive = typeof(expensiveRecipes) === "function" ? expensiveRecipes() : expensiveRecipes;
         var result = {};
-        var items = loop === "input" ? $r.GetRecipeInput(recipe, expensiveRecipes) : $r.GetRecipeOutput(recipe, expensiveRecipes);
         if (recipe) {
+            var items = loop === "input" ? $r.GetRecipeInput(recipe, expensive) : $r.GetRecipeOutput(recipe, expensive);
             //TODO time not based on marathon
-            var time = $r.GetRecipeTime(recipe, expensiveRecipes);
+            var time = $r.GetRecipeTime(recipe, expensive);
             for (var i in items) {
                 result[i] = action(building, items[i], time);
             }
