@@ -2473,7 +2473,7 @@
     }, {
         "id": "rocket-part",
         "building": ["rocket-silo"],
-        "accept_productivity": false,
+        "accept_productivity": true,
         "time": 3,
         "input": {
             "low-density-structure": 10,

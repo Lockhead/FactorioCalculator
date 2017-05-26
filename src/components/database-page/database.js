@@ -80,7 +80,8 @@ define(['knockout', 'text!./database.html', 'jquery',
         'light-oil-cracking': 1,
         'solid-fuel-from-heavy-oil': 1,
         'solid-fuel-from-light-oil': 1,
-        'solid-fuel-from-petroleum-gas': 1
+        'solid-fuel-from-petroleum-gas': 1,
+        'rocket-part': 1
     };
 
     DatabaseViewModel.prototype.parseData = function(file) {
