@@ -2230,7 +2230,7 @@
     }, {
         "id": "electric-engine-unit",
         "building": ["assembling-machine-3", "assembling-machine-2"],
-        "accept_productivity": false,
+        "accept_productivity": true,
         "time": 10,
         "input": {
             "engine-unit": 1,
