@@ -3,7 +3,6 @@
     "game_version": 0.13,
     "data": [{
         "id": "iron-ore",
-        "accept_productivity": false,
         "time": 2,
         "building": ["electric-mining-drill", "burner-mining-drill"],
         "input": {},
@@ -13,7 +12,6 @@
     }, {
         "id": "copper-ore",
         "building": ["electric-mining-drill", "burner-mining-drill"],
-        "accept_productivity": false,
         "time": 2,
         "input": {},
         "output": {
@@ -22,7 +20,6 @@
     }, {
         "id": "coal",
         "building": ["electric-mining-drill", "burner-mining-drill"],
-        "accept_productivity": false,
         "time": 2,
         "input": {},
         "output": {
@@ -31,7 +28,6 @@
     }, {
         "id": "stone",
         "building": ["electric-mining-drill", "burner-mining-drill"],
-        "accept_productivity": false,
         "time": 2,
         "input": {},
         "output": {
@@ -40,7 +36,6 @@
     }, {
         "id": "piercing-rounds-magazine",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 3,
         "input": {
             "firearm-magazine": 1,
@@ -53,7 +48,6 @@
     }, {
         "id": "uranium-rounds-magazine",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "piercing-rounds-magazine": 1,
@@ -65,7 +59,6 @@
     }, {
         "id": "rocket",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 8,
         "input": {
             "electronic-circuit": 1,
@@ -78,7 +71,6 @@
     }, {
         "id": "explosive-rocket",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 8,
         "input": {
             "rocket": 1,
@@ -90,7 +82,6 @@
     }, {
         "id": "atomic-bomb",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 50,
         "input": {
             "processing-unit": 20,
@@ -103,7 +94,6 @@
     }, {
         "id": "shotgun-shell",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 3,
         "input": {
             "copper-plate": 2,
@@ -115,7 +105,6 @@
     }, {
         "id": "piercing-shotgun-shell",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 8,
         "input": {
             "shotgun-shell": 2,
@@ -128,7 +117,6 @@
     }, {
         "id": "railgun-dart",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 8,
         "input": {
             "steel-plate": 5,
@@ -140,7 +128,6 @@
     }, {
         "id": "cannon-shell",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "normal": {
             "time": 8,
             "input": {
@@ -166,7 +153,6 @@
     }, {
         "id": "explosive-cannon-shell",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "normal": {
             "time": 8,
             "input": {
@@ -192,7 +178,6 @@
     }, {
         "id": "uranium-cannon-shell",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 12,
         "input": {
             "cannon-shell": 1,
@@ -204,7 +189,6 @@
     }, {
         "id": "explosive-uranium-cannon-shell",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 12,
         "input": {
             "explosive-cannon-shell": 1,
@@ -216,7 +200,6 @@
     }, {
         "id": "flamethrower-ammo",
         "building": ["chemical-plant"],
-        "accept_productivity": false,
         "time": 6,
         "input": {
             "steel-plate": 5,
@@ -229,7 +212,6 @@
     }, {
         "id": "poison-capsule",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 8,
         "input": {
             "steel-plate": 3,
@@ -242,7 +224,6 @@
     }, {
         "id": "slowdown-capsule",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 8,
         "input": {
             "steel-plate": 2,
@@ -255,7 +236,6 @@
     }, {
         "id": "grenade",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 8,
         "input": {
             "iron-plate": 5,
@@ -267,7 +247,6 @@
     }, {
         "id": "cluster-grenade",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 8,
         "input": {
             "grenade": 7,
@@ -280,7 +259,6 @@
     }, {
         "id": "defender-capsule",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 8,
         "input": {
             "piercing-rounds-magazine": 1,
@@ -293,7 +271,6 @@
     }, {
         "id": "distractor-capsule",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 15,
         "input": {
             "defender-capsule": 4,
@@ -305,7 +282,6 @@
     }, {
         "id": "destroyer-capsule",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 15,
         "input": {
             "distractor-capsule": 4,
@@ -317,7 +293,6 @@
     }, {
         "id": "discharge-defense-remote",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "electronic-circuit": 1
@@ -372,7 +347,6 @@
     }, {
         "id": "wooden-chest",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "wood": 4
@@ -394,7 +368,6 @@
     }, {
         "id": "iron-axe",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "iron-stick": 2,
@@ -406,7 +379,6 @@
     }, {
         "id": "stone-furnace",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "stone": 5
@@ -417,7 +389,6 @@
     }, {
         "id": "boiler",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "stone-furnace": 1,
@@ -429,7 +400,6 @@
     }, {
         "id": "steam-engine",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "normal": {
             "time": 0.5,
             "input": {
@@ -501,7 +471,6 @@
     }, {
         "id": "transport-belt",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "iron-plate": 1,
@@ -513,7 +482,6 @@
     }, {
         "id": "electric-mining-drill",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "normal": {
             "time": 2,
             "input": {
@@ -539,7 +507,6 @@
     }, {
         "id": "burner-mining-drill",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "normal": {
             "time": 2,
             "input": {
@@ -565,7 +532,6 @@
     }, {
         "id": "inserter",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "electronic-circuit": 1,
@@ -578,7 +544,6 @@
     }, {
         "id": "burner-inserter",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "iron-plate": 1,
@@ -590,7 +555,6 @@
     }, {
         "id": "pipe",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "normal": {
             "time": 0.5,
             "input": {
@@ -612,7 +576,6 @@
     }, {
         "id": "offshore-pump",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "electronic-circuit": 2,
@@ -636,7 +599,6 @@
     }, {
         "id": "small-electric-pole",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "wood": 2,
@@ -648,7 +610,6 @@
     }, {
         "id": "pistol",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 5,
         "input": {
             "copper-plate": 5,
@@ -660,7 +621,6 @@
     }, {
         "id": "submachine-gun",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "normal": {
             "time": 10,
             "input": {
@@ -686,7 +646,6 @@
     }, {
         "id": "firearm-magazine",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 1,
         "input": {
             "iron-plate": 4
@@ -697,7 +656,6 @@
     }, {
         "id": "light-armor",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 3,
         "input": {
             "iron-plate": 40
@@ -708,7 +666,6 @@
     }, {
         "id": "radar",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "electronic-circuit": 5,
@@ -721,7 +678,6 @@
     }, {
         "id": "small-lamp",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "electronic-circuit": 1,
@@ -734,7 +690,6 @@
     }, {
         "id": "pipe-to-ground",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "pipe": 10,
@@ -746,7 +701,6 @@
     }, {
         "id": "assembling-machine-1",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "electronic-circuit": 3,
@@ -759,7 +713,6 @@
     }, {
         "id": "repair-pack",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "electronic-circuit": 2,
@@ -771,7 +724,6 @@
     }, {
         "id": "gun-turret",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 8,
         "input": {
             "iron-gear-wheel": 10,
@@ -784,7 +736,6 @@
     }, {
         "id": "night-vision-equipment",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "advanced-circuit": 5,
@@ -796,7 +747,6 @@
     }, {
         "id": "energy-shield-equipment",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "advanced-circuit": 5,
@@ -808,7 +758,6 @@
     }, {
         "id": "energy-shield-mk2-equipment",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "energy-shield-equipment": 10,
@@ -820,7 +769,6 @@
     }, {
         "id": "battery-equipment",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "battery": 5,
@@ -832,7 +780,6 @@
     }, {
         "id": "battery-mk2-equipment",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "battery-equipment": 10,
@@ -844,7 +791,6 @@
     }, {
         "id": "solar-panel-equipment",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "solar-panel": 5,
@@ -857,7 +803,6 @@
     }, {
         "id": "fusion-reactor-equipment",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "processing-unit": 250
@@ -868,7 +813,6 @@
     }, {
         "id": "personal-laser-defense-equipment",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "processing-unit": 1,
@@ -881,7 +825,6 @@
     }, {
         "id": "discharge-defense-equipment",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "processing-unit": 5,
@@ -894,7 +837,6 @@
     }, {
         "id": "exoskeleton-equipment",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "processing-unit": 10,
@@ -907,7 +849,6 @@
     }, {
         "id": "personal-roboport-equipment",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "advanced-circuit": 10,
@@ -921,7 +862,6 @@
     }, {
         "id": "personal-roboport-mk2-equipment",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 20,
         "input": {
             "personal-roboport-equipment": 5,
@@ -999,7 +939,6 @@
     }, {
         "id": "sulfuric-acid",
         "building": ["chemical-plant"],
-        "accept_productivity": false,
         "time": 1,
         "input": {
             "sulfur": 5,
@@ -1069,7 +1008,6 @@
     }, {
         "id": "lubricant",
         "building": ["chemical-plant"],
-        "accept_productivity": false,
         "time": 1,
         "input": {
             "heavy-oil": 10
@@ -1113,7 +1051,6 @@
     }, {
         "id": "long-handed-inserter",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "iron-gear-wheel": 1,
@@ -1126,7 +1063,6 @@
     }, {
         "id": "fast-inserter",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "electronic-circuit": 2,
@@ -1139,7 +1075,6 @@
     }, {
         "id": "filter-inserter",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "fast-inserter": 1,
@@ -1151,7 +1086,6 @@
     }, {
         "id": "stack-inserter",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "iron-gear-wheel": 15,
@@ -1165,7 +1099,6 @@
     }, {
         "id": "stack-filter-inserter",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "stack-inserter": 1,
@@ -1177,7 +1110,6 @@
     }, {
         "id": "speed-module",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 15,
         "input": {
             "advanced-circuit": 5,
@@ -1189,7 +1121,6 @@
     }, {
         "id": "speed-module-2",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 30,
         "input": {
             "speed-module": 4,
@@ -1202,7 +1133,6 @@
     }, {
         "id": "speed-module-3",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 60,
         "input": {
             "speed-module-2": 5,
@@ -1215,7 +1145,6 @@
     }, {
         "id": "productivity-module",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 15,
         "input": {
             "advanced-circuit": 5,
@@ -1227,7 +1156,6 @@
     }, {
         "id": "productivity-module-2",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 30,
         "input": {
             "productivity-module": 4,
@@ -1240,7 +1168,6 @@
     }, {
         "id": "productivity-module-3",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 60,
         "input": {
             "productivity-module-2": 5,
@@ -1253,7 +1180,6 @@
     }, {
         "id": "effectivity-module",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 15,
         "input": {
             "advanced-circuit": 5,
@@ -1265,7 +1191,6 @@
     }, {
         "id": "effectivity-module-2",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 30,
         "input": {
             "effectivity-module": 4,
@@ -1278,7 +1203,6 @@
     }, {
         "id": "effectivity-module-3",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 60,
         "input": {
             "effectivity-module-2": 5,
@@ -1291,7 +1215,6 @@
     }, {
         "id": "player-port",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "electronic-circuit": 10,
@@ -1304,7 +1227,6 @@
     }, {
         "id": "fast-transport-belt",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "iron-gear-wheel": 5,
@@ -1316,7 +1238,6 @@
     }, {
         "id": "express-transport-belt",
         "building": ["assembling-machine-3", "assembling-machine-2"],
-        "accept_productivity": false,
         "normal": {
             "time": 0.5,
             "input": {
@@ -1342,7 +1263,6 @@
     }, {
         "id": "solar-panel",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "steel-plate": 5,
@@ -1355,7 +1275,6 @@
     }, {
         "id": "assembling-machine-2",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "normal": {
             "time": 0.5,
             "input": {
@@ -1383,7 +1302,6 @@
     }, {
         "id": "assembling-machine-3",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "speed-module": 4,
@@ -1395,7 +1313,6 @@
     }, {
         "id": "car",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "engine-unit": 8,
@@ -1408,7 +1325,6 @@
     }, {
         "id": "tank",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "normal": {
             "time": 0.5,
             "input": {
@@ -1436,7 +1352,6 @@
     }, {
         "id": "rail",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "stone": 1,
@@ -1449,7 +1364,6 @@
     }, {
         "id": "locomotive",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "engine-unit": 20,
@@ -1462,7 +1376,6 @@
     }, {
         "id": "cargo-wagon",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "iron-gear-wheel": 10,
@@ -1475,7 +1388,6 @@
     }, {
         "id": "fluid-wagon",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 1.5,
         "input": {
             "iron-gear-wheel": 10,
@@ -1489,7 +1401,6 @@
     }, {
         "id": "train-stop",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "electronic-circuit": 5,
@@ -1502,7 +1413,6 @@
     }, {
         "id": "rail-signal",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "electronic-circuit": 1,
@@ -1514,7 +1424,6 @@
     }, {
         "id": "rail-chain-signal",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "electronic-circuit": 1,
@@ -1526,7 +1435,6 @@
     }, {
         "id": "heavy-armor",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 8,
         "input": {
             "copper-plate": 100,
@@ -1538,7 +1446,6 @@
     }, {
         "id": "modular-armor",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 15,
         "input": {
             "advanced-circuit": 30,
@@ -1550,7 +1457,6 @@
     }, {
         "id": "power-armor",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 20,
         "input": {
             "processing-unit": 40,
@@ -1563,7 +1469,6 @@
     }, {
         "id": "power-armor-mk2",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 25,
         "input": {
             "effectivity-module-3": 5,
@@ -1577,7 +1482,6 @@
     }, {
         "id": "iron-chest",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "iron-plate": 8
@@ -1588,7 +1492,6 @@
     }, {
         "id": "steel-chest",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "steel-plate": 8
@@ -1599,7 +1502,6 @@
     }, {
         "id": "stone-wall",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "stone-brick": 5
@@ -1610,7 +1512,6 @@
     }, {
         "id": "gate",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "stone-wall": 1,
@@ -1623,7 +1524,6 @@
     }, {
         "id": "flamethrower",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "steel-plate": 5,
@@ -1635,7 +1535,6 @@
     }, {
         "id": "land-mine",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 5,
         "input": {
             "steel-plate": 1,
@@ -1647,7 +1546,6 @@
     }, {
         "id": "rocket-launcher",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "iron-plate": 5,
@@ -1660,7 +1558,6 @@
     }, {
         "id": "shotgun",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "iron-plate": 15,
@@ -1674,7 +1571,6 @@
     }, {
         "id": "combat-shotgun",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "steel-plate": 15,
@@ -1688,7 +1584,6 @@
     }, {
         "id": "railgun",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 8,
         "input": {
             "steel-plate": 15,
@@ -1779,7 +1674,6 @@
     }, {
         "id": "lab",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 3,
         "input": {
             "electronic-circuit": 10,
@@ -1792,7 +1686,6 @@
     }, {
         "id": "red-wire",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "electronic-circuit": 1,
@@ -1804,7 +1697,6 @@
     }, {
         "id": "green-wire",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "electronic-circuit": 1,
@@ -1816,7 +1708,6 @@
     }, {
         "id": "underground-belt",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 1,
         "input": {
             "iron-plate": 10,
@@ -1828,7 +1719,6 @@
     }, {
         "id": "fast-underground-belt",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "iron-gear-wheel": 40,
@@ -1840,7 +1730,6 @@
     }, {
         "id": "express-underground-belt",
         "building": ["assembling-machine-3", "assembling-machine-2"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "iron-gear-wheel": 80,
@@ -1853,7 +1742,6 @@
     }, {
         "id": "loader",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 1,
         "input": {
             "inserter": 5,
@@ -1868,7 +1756,6 @@
     }, {
         "id": "fast-loader",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 3,
         "input": {
             "fast-transport-belt": 5,
@@ -1880,7 +1767,6 @@
     }, {
         "id": "express-loader",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "express-transport-belt": 5,
@@ -1892,7 +1778,6 @@
     }, {
         "id": "splitter",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 1,
         "input": {
             "electronic-circuit": 5,
@@ -1905,7 +1790,6 @@
     }, {
         "id": "fast-splitter",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 2,
         "input": {
             "splitter": 1,
@@ -1918,7 +1802,6 @@
     }, {
         "id": "express-splitter",
         "building": ["assembling-machine-3", "assembling-machine-2"],
-        "accept_productivity": false,
         "time": 2,
         "input": {
             "fast-splitter": 1,
@@ -1984,7 +1867,6 @@
     }, {
         "id": "logistic-robot",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "flying-robot-frame": 1,
@@ -1996,7 +1878,6 @@
     }, {
         "id": "construction-robot",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "flying-robot-frame": 1,
@@ -2008,7 +1889,6 @@
     }, {
         "id": "logistic-chest-passive-provider",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "steel-chest": 1,
@@ -2021,7 +1901,6 @@
     }, {
         "id": "logistic-chest-active-provider",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "steel-chest": 1,
@@ -2034,7 +1913,6 @@
     }, {
         "id": "logistic-chest-storage",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "steel-chest": 1,
@@ -2047,7 +1925,6 @@
     }, {
         "id": "logistic-chest-requester",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "steel-chest": 1,
@@ -2060,7 +1937,6 @@
     }, {
         "id": "rocket-silo",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 30,
         "input": {
             "steel-plate": 1000,
@@ -2075,7 +1951,6 @@
     }, {
         "id": "roboport",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "steel-plate": 45,
@@ -2088,7 +1963,6 @@
     }, {
         "id": "steel-axe",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "steel-plate": 5,
@@ -2100,7 +1974,6 @@
     }, {
         "id": "big-electric-pole",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "steel-plate": 5,
@@ -2112,7 +1985,6 @@
     }, {
         "id": "substation",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "steel-plate": 10,
@@ -2125,7 +1997,6 @@
     }, {
         "id": "medium-electric-pole",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "steel-plate": 2,
@@ -2137,7 +2008,6 @@
     }, {
         "id": "accumulator",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "iron-plate": 2,
@@ -2149,7 +2019,6 @@
     }, {
         "id": "steel-furnace",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 3,
         "input": {
             "steel-plate": 6,
@@ -2161,7 +2030,6 @@
     }, {
         "id": "electric-furnace",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 5,
         "input": {
             "steel-plate": 10,
@@ -2174,7 +2042,6 @@
     }, {
         "id": "beacon",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 15,
         "input": {
             "electronic-circuit": 20,
@@ -2188,7 +2055,6 @@
     }, {
         "id": "pumpjack",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 5,
         "input": {
             "steel-plate": 5,
@@ -2202,7 +2068,6 @@
     }, {
         "id": "oil-refinery",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "steel-plate": 15,
@@ -2309,7 +2174,6 @@
     }, {
         "id": "storage-tank",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 3,
         "input": {
             "iron-plate": 20,
@@ -2321,7 +2185,6 @@
     }, {
         "id": "pump",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 2,
         "input": {
             "engine-unit": 1,
@@ -2334,7 +2197,6 @@
     }, {
         "id": "chemical-plant",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 5,
         "input": {
             "steel-plate": 5,
@@ -2348,7 +2210,6 @@
     }, {
         "id": "small-plane",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 30,
         "input": {
             "plastic-bar": 100,
@@ -2362,7 +2223,6 @@
     }, {
         "id": "arithmetic-combinator",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "copper-cable": 5,
@@ -2374,7 +2234,6 @@
     }, {
         "id": "decider-combinator",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "copper-cable": 5,
@@ -2386,7 +2245,6 @@
     }, {
         "id": "constant-combinator",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "copper-cable": 5,
@@ -2398,7 +2256,6 @@
     }, {
         "id": "power-switch",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 2,
         "input": {
             "iron-plate": 5,
@@ -2411,7 +2268,6 @@
     }, {
         "id": "programmable-speaker",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 2,
         "input": {
             "iron-plate": 5,
@@ -2424,7 +2280,6 @@
     }, {
         "id": "low-density-structure",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "normal": {
             "time": 30,
             "input": {
@@ -2450,7 +2305,6 @@
     }, {
         "id": "rocket-fuel",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 30,
         "input": {
             "solid-fuel": 10
@@ -2461,7 +2315,6 @@
     }, {
         "id": "rocket-control-unit",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 30,
         "input": {
             "processing-unit": 1,
@@ -2486,7 +2339,6 @@
     }, {
         "id": "satellite",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 3,
         "input": {
             "low-density-structure": 100,
@@ -2502,7 +2354,6 @@
     }, {
         "id": "concrete",
         "building": ["assembling-machine-3", "assembling-machine-2"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "stone-brick": 5,
@@ -2515,7 +2366,6 @@
     }, {
         "id": "hazard-concrete",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.25,
         "input": {
             "concrete": 10
@@ -2526,7 +2376,6 @@
     }, {
         "id": "landfill",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "stone": 20
@@ -2537,7 +2386,6 @@
     }, {
         "id": "electric-energy-interface",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "iron-plate": 2,
@@ -2549,7 +2397,6 @@
     }, {
         "id": "nuclear-reactor",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 4,
         "input": {
             "concrete": 500,
@@ -2563,7 +2410,6 @@
     }, {
         "id": "centrifuge",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 4,
         "input": {
             "concrete": 100,
@@ -2577,7 +2423,6 @@
     }, {
         "id": "uranium-processing",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "uranium-ore": 10
@@ -2589,7 +2434,6 @@
     }, {
         "id": "kovarex-enrichment-process",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 50,
         "input": {
             "uranium-235": 40,
@@ -2602,7 +2446,6 @@
     }, {
         "id": "nuclear-fuel-reprocessing",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 50,
         "input": {
             "used-up-uranium-fuel-cell": 5
@@ -2613,7 +2456,6 @@
     }, {
         "id": "uranium-fuel-cell",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 10,
         "input": {
             "iron-plate": 10,
@@ -2626,7 +2468,6 @@
     }, {
         "id": "heat-exchanger",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "steel-plate": 10,
@@ -2639,7 +2480,6 @@
     }, {
         "id": "heat-pipe",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "steel-plate": 10,
@@ -2651,7 +2491,6 @@
     }, {
         "id": "steam-turbine",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 0.5,
         "input": {
             "iron-gear-wheel": 50,
@@ -2664,7 +2503,6 @@
     }, {
         "id": "laser-turret",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 20,
         "input": {
             "steel-plate": 20,
@@ -2677,7 +2515,6 @@
     }, {
         "id": "flamethrower-turret",
         "building": ["assembling-machine-3", "assembling-machine-2", "assembling-machine-1"],
-        "accept_productivity": false,
         "time": 20,
         "input": {
             "steel-plate": 30,
